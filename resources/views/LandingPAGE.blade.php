@@ -13,47 +13,28 @@
     </header>
 
     <!-- Main Content -->
-    <main class="content flex-grow mb-8 pt-28"> <!-- Gunakan padding top sesuai tinggi header -->
-        <h1 class="text-2xl font-bold">content1111111111111111</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
-        <h1 class="text-2xl font-bold">content</h1>
+    <main class="content flex-grow mb-8 mt-4 pt-28 px-12"> <!-- Gunakan padding top sesuai tinggi header -->
+        <div class="flex flex-wrap">
+            <!-- Box Kiri -->
+            <!-- Box Kanan -->
+            <div class="w-full md:w-3/5  p-4 ">
+                <h2 class="text-6xl font-bold mb-4 ml-16 mt-4 ">Analisis Tren</h2>
+                <h2 class="text-6xl font-bold mb-4 ml-16">Menu Pizza</h2>
+                <p class="text-2xl ml-16 mr-16">
+                    Sebuah sistem pendukung pemberian keputusan
+                    untuk menganalisa tren dalam rentang waktu yang dapat ditentukan sehingga akan membantu membuat
+                    strategi dalam meningkatkan usaha penjualan pizza anda.
+                </p>
+                <button class="ml-80 mt-12 border border-gray px-6 py-3 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#19A7CE] hover:scale-105">
+                    MULAI
+                </button>
+                </div>
+
+            <div class="w-full md:w-2/5 p-4 flex items-center justify-center ">
+                <img src="{{ asset('./images/gambar 1.png') }}" alt="gambar 1r" class="max-w-full h-auto rounded-lg ">
+            </div>
+
+        </div>
     </main>
     <button id="scrollToTopBtn"
         class="fixed bottom-6 right-8 bg-[#405D72] text-white px-3 pt-2 pb-2 rounded-full shadow-lg place-content-center hover:bg-indigo-600 transition duration-300 hidden"

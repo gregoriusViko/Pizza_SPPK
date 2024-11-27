@@ -2,7 +2,7 @@
     <div class="container mx-auto grid grid-cols-3 gap-4 justify-between">
         <!-- Box 1 -->
         <div class="p-4">
-            <div class="md:pl-[50px]">
+            <div class="md:pl-[116px]">
                 <p class="text-sm font-bold">Universitas Sanata Dharma</p>
                 <p class="text-sm font-bold">Dosen Pembimbing</p>
                 <p class="text-sm font-bold">Dr. Ir. Anastasia Rita Widiarti</p>
