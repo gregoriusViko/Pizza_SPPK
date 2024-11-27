@@ -1,4 +1,4 @@
-<header class="bg-white-800 text-black py-10 px-6 flex items-center justify-center">
+<header class="bg-white-800 text-black py-5 px-3 flex items-center justify-center">
     <div class="container mx-auto flex justify-between items-center py-4">
         <!-- Logo -->
         <div class="absolute flex items-center left-20">

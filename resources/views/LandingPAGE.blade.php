@@ -1,13 +1,90 @@
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </head>
 
 <body class="min-h-screen flex flex-col">
-    @include('partials.header') {{-- Sesuaikan jalur folder --}}
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-white text-black border border-red shadow-lg z-10 h-28">
+        @include('partials.header') {{-- Sesuaikan jalur folder --}}
+    </header>
 
+    <!-- Main Content -->
+    <main class="content flex-grow mb-8 pt-28"> <!-- Gunakan padding top sesuai tinggi header -->
+        <h1 class="text-2xl font-bold">content1111111111111111</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+        <h1 class="text-2xl font-bold">content</h1>
+    </main>
+    <button id="scrollToTopBtn"
+        class="fixed bottom-6 right-8 bg-[#405D72] text-white px-3 pt-2 pb-2 rounded-full shadow-lg place-content-center hover:bg-indigo-600 transition duration-300 hidden"
+        onclick="scrollToTop()">
+        {{-- <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+        </svg> --}}
+        <ion-icon name="arrow-up-circle-outline" class="h-6 w-6"></ion-icon>
+    </button>
     <div class="content flex-grow">
-        <h1 class="text-2xl font-bold">content</h1> 
+
     </div>
 
     @include('Partials.Footer') {{-- Sesuaikan jalur folder --}}
 </body>
+<script>
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    // Tampilkan tombol saat pengguna scroll ke bawah
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.remove("hidden");
+        } else {
+            scrollToTopBtn.classList.add("hidden");
+        }
+    });
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }
+</script>

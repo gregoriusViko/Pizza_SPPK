@@ -41,18 +41,23 @@
                 </div>
                 <div class="grid-start-2">
                     <div class="flex flex-grow space-x-5">
-                        <img src="{{ asset('./images/angger.png') }}" alt="Image 1"
-                            class="w-14 h-14 rounded-full border-2 ">
-                        <img src="{{ asset('./images/viko.png') }}" alt="Image 2"
-                            class="w-14 h-14 rounded-full border-2  ">
-                        <img src="{{ asset('./images/brian.png') }} " alt="Image 3"
-                            class="w-14 h-14 rounded-full border-2 ">
+                        <a href="https://www.instagram.com/gregoriusangger93/" target="_blank">
+                            <img src="{{ asset('./images/angger.png') }}" alt="Image 1"
+                                class="w-14 h-14 rounded-full border-2 ">
+                        </a>
+                        <a href="https://www.instagram.com/vikodwiatmaka/" target="_blank">
+                            <img src="{{ asset('./images/viko.png') }}" alt="Image 2"
+                                class="w-14 h-14 rounded-full border-2  ">
+                        </a>
+                        <a href="https://www.instagram.com/fclns_brianziregar/ target="_blank">
+                            <img src="{{ asset('./images/brian.png') }}" alt="Image 3"
+                                class="w-14 h-14 rounded-full border-2 ">
+                        </a>
+
                     </div>
 
                 </div>
             </div>
-
-
         </div>
     </div>
 </footer>
