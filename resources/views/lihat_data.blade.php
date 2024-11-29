@@ -19,9 +19,9 @@
     </header>
 
     <!-- Main Content -->
-    <main class="content flex-grow mb-8 mt-4 pt-28 px-12"> <!-- Gunakan padding top sesuai tinggi header -->
+    <main class="content flex-grow mb-8 mt-4 pt-28 px-12 mx-24"> <!-- Gunakan padding top sesuai tinggi header -->
         <div class="flex place-content-center font-poppins font-medium text-2xl">TABEL TRANSAKSI PIZZA</div>
-        <div class="border border-black rounded-md mt-3 mx-24 p-4 ">
+        <div class="border border-black rounded-md mt-3 p-4 ">
             #tampilkan tabel pizza
             {{-- <table class="rounded-md w-full text-sm text-left rtl:text-right text-black border border-black">
                 <thead class="text-xs text-white uppercase bg-blue-600">
@@ -73,7 +73,7 @@
         </div>
         <div class="flex place-content-end">
             <button
-                class="mx-24 mt-5 px-5 py-2 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105"
+                class=" mt-5 px-5 py-2 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105"
                 onclick="request()->is('/pengolahan')">OLAH</button>
         </div>
     </main>

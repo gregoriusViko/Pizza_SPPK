@@ -11,6 +11,10 @@ Route::get('/lihatdata', function () {
     return view('lihat_data');
 });
 
+Route::get('/inputPengolahan', function () {
+    return view('Pengolahan_1');
+});
+
 Route::get('/coba', function () {
     return view('COBA');
 });
