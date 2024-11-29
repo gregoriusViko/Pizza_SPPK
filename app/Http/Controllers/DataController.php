@@ -20,6 +20,6 @@ class DataController extends Controller
 
         $result = json_decode($process->getOutput(), true);
 
-        return view('datacsv', $result);
+        return view('lihat_data', $result);
     }
 }

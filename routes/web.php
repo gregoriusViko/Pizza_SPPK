@@ -7,9 +7,7 @@ Route::get('/', function () {
     return view('LandingPAGE');
 });
 
-Route::get('/lihatdata', function () {
-    return view('lihat_data');
-});
+Route::get('/lihatdata', [DataController::class, 'dataTampil']);
 
 Route::get('/inputPengolahan', function () {
     return view('Pengolahan_1');
