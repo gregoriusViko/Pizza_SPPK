@@ -14,6 +14,9 @@ Route::get('/lihatdata', function () {
 Route::get('/inputPengolahan', function () {
     return view('Pengolahan_1');
 });
+Route::get('/PengolahanA', function () {
+    return view('Pengolahan_2');
+});
 
 Route::get('/coba', function () {
     return view('COBA');
