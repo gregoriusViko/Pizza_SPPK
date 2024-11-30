@@ -7,13 +7,13 @@
 
         <!-- Navigation -->
         <nav class="flex gap-8 items-center justify-center flex-grow">
-            <a href="#home" class="text-lg font-semibold hover:text-gray-400 transition text-black font-poppins">
+            <a href="#home" class="text-lg font-semibold hover:text-[#19A7CE] transition text-black font-poppins">
                 Lihat Data
             </a>
-            <a href="#about" class="text-lg font-semibold hover:text-gray-400 transition text-black font-poppins">
+            <a href="#about" class="text-lg font-semibold hover:text-[#19A7CE] transition text-black font-poppins">
                 Pengolahan
             </a>
-            <a href="#contact" class="text-lg font-semibold hover:text-gray-400 transition text-black font-poppins">
+            <a href="#contact" class="text-lg font-semibold hover:text-[#19A7CE] transition text-black font-poppins">
                 Hasil
             </a>
         </nav>
