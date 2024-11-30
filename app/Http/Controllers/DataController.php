@@ -9,7 +9,9 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 class DataController extends Controller
 {
     function dataTampil(){
-        $process = new Process(['python3', 'kode_python/read_csv.py', 'kode_python/pizza_sales.csv']);
+        $pythonPath = env('PYTHON_PATH', 'python'); // Default ke 'python' jika tidak ada di .env
+
+        $process = new Process([$pythonPath, 'kode_python/read_csv.py', 'kode_python/pizza_sales.csv']);
         $process->run();
 
         if (!$process->isSuccessful()) {
@@ -18,6 +20,6 @@ class DataController extends Controller
 
         $result = json_decode($process->getOutput(), true);
 
-        return view('datacsv', $result);
+        return view('lihat_data', $result);
     }
 }
