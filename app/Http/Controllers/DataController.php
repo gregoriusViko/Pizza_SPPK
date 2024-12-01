@@ -8,7 +8,7 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class DataController extends Controller
 {
-    function dataTampil()
+    public function dataTampil(Request $request)
     {
         // Lokasi file CSV
         $path = 'kode_python/pizza_sales_modified.csv';
@@ -28,11 +28,16 @@ class DataController extends Controller
             fclose($handle);
         }
 
-        $csvData = array_slice($csvData, 0, 30);
+        $totalData = count($csvData); // Total data
+        $perPage = ceil($totalData / 10); // Jumlah data per tab (10 tab)
+        $page = $request->input('page', 1); // Mengambil halaman yang diminta (default halaman 1)
+        $offset = ($page - 1) * $perPage; // Menghitung offset untuk data yang akan ditampilkan
+        $paginatedData = array_slice($csvData, $offset, $perPage); // Menampilkan bagian data sesuai halaman
 
-        // Mengirimkan data CSV ke view untuk ditampilkan
-        return view('lihat_data', compact(['csvData', 'title']));
+        // Mengirimkan data ke view untuk ditampilkan
+        return view('lihat_data', compact(['paginatedData', 'title', 'totalData']));
     }
+
 
     function dataKelompok()
     {
