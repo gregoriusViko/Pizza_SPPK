@@ -13,7 +13,7 @@
             <a href="/lihatdata" :active="request()->is('/lihatdata')" class="text-lg font-semibold hover:text-gray-400 transition text-black font-poppins">
                 Lihat Data
             </a>
-            <a href="/pengolahan" :active="request()->is('/pengolahan')" class="text-lg font-semibold hover:text-gray-400 transition text-black font-poppins">
+            <a href="/inputPengolahan" :active="request()->is('/pengolahan')" class="text-lg font-semibold hover:text-gray-400 transition text-black font-poppins">
                 Pengolahan
             </a>
             <a href="/hasil" :active="request()->is('/hasil')" class="text-lg font-semibold hover:text-gray-400 transition text-black font-poppins">
