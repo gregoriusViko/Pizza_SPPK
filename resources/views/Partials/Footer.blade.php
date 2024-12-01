@@ -1,4 +1,4 @@
-<footer class="bg-[#D9D9D9] text-black py-1 shadow-t-lg">
+<footer class="bg-[#D9D9D9] text-black py-1 shadow-t-lg mt-5">
     <div class="container mx-auto grid grid-cols-3 gap-4 justify-between">
         <!-- Box 1 -->
         <div class="p-4">
