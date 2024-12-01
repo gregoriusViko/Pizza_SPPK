@@ -18,49 +18,53 @@
         @include('partials.header') {{-- Sesuaikan jalur folder --}}
     </header>
 
-    <!-- Main Content -->
-    <main class="content flex-grow mb-8 mt-4 pt-28 px-12 mx-24"> <!-- Gunakan padding top sesuai tinggi header -->
-        <div class="flex place-content-center font-poppins font-medium mt-2 text-2xl">TABEL TRANSAKSI PIZZA</div>
-        <div class="border border-black rounded-md mt-5 p-4 overflow-auto" style="max-height: 420px;">
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        @foreach($columns as $column)
-                            <th>{{ $column }}</th>
-                        @endforeach
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($data as $row)
-                        <tr>
-                            @foreach($columns as $column)
-                                <td>{{ $row[$column] }}</td>
-                            @endforeach
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-        <div class="flex place-content-end">
-            <button
-                class=" mt-5 px-5 py-2 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105"
-                onclick="request()->is('/pengolahan')">OLAH</button>
-        </div>
+    <main class="content flex-grow mb-5 mt-4 pt-28 px-12 mx-24">  
+        <h2 class="text-xl font-semibold text-black mb-4">Tabel 1 itemset</h2>
+
+
+        <div class="bg-[#D9D9D9] p-4 w-full h-96 flex flex-col items-start justify-center">
+ 
+            <h2 class="text-xl text-black mb-4 text-left">
+              Berikut hasil dari 1 itemset yang memiliki nilai support diatas nilai minimum support
+            </h2>
+            <h2 class="text-xl text-black mb-4 text-left">
+              Min Support : { }
+            </h2>
+          
+            <!-- Box scrollable -->
+            <div class="bg-[#746868] w-[99%] h-70 overflow-y-scroll p-4">
+              <!-- Konten panjang -->
+              <div class="text-white space-y-4">
+                <h2 class="text-xl font-bold">Halaman Panjang</h2>
+                <p>Ini adalah bagian pertama dari konten panjang.</p>
+                <p>Ini adalah bagian kedua dari konten panjang.</p>
+                <p>Ini adalah bagian ketiga dari konten panjang.</p>
+                <p>Ini adalah bagian keempat dari konten panjang.</p>
+                <p>Ini adalah bagian kelima dari konten panjang.</p>
+                <p>Konten ini bisa terus bertambah sesuai kebutuhan Anda.</p>
+              </div>
+            </div>
+          </div>
+          
+</div>
+
+          
     </main>
+
     <button id="scrollToTopBtn"
         class="fixed bottom-6 right-8 bg-[#405D72] text-white px-3 pt-2 pb-2 rounded-full shadow-lg place-content-center hover:bg-indigo-600 transition duration-300 hidden"
         onclick="scrollToTop()">
-        {{-- <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
-        </svg> --}}
         <ion-icon name="arrow-up-circle-outline" class="h-6 w-6"></ion-icon>
     </button>
-    <div class="content flex-grow">
-
-    </div>
+    <button
+    class="mt-[-10px] w-[80px] h-[40px] bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105 ml-auto mr-[150px]"
+    onclick="window.location.href='/Pengolahan_5'">
+    NEXT
+</button>
 
     @include('Partials.Footer') {{-- Sesuaikan jalur folder --}}
 </body>
+
 <script>
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 

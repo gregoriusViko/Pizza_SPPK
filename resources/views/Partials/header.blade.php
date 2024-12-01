@@ -7,13 +7,16 @@
 
         <!-- Navigation -->
         <nav class="flex gap-8 items-center justify-center flex-grow">
-            <a href="#home" class="text-lg font-semibold hover:text-[#19A7CE] transition text-black font-poppins">
+            <a href="/" :active="request()->is('/')" class="text-lg font-semibold hover:text-gray-400 transition text-black font-poppins">
+                Home
+            </a>
+            <a href="/lihatdata" :active="request()->is('/lihatdata')" class="text-lg font-semibold hover:text-gray-400 transition text-black font-poppins">
                 Lihat Data
             </a>
-            <a href="#about" class="text-lg font-semibold hover:text-[#19A7CE] transition text-black font-poppins">
+            <a href="/pengolahan" :active="request()->is('/pengolahan')" class="text-lg font-semibold hover:text-gray-400 transition text-black font-poppins">
                 Pengolahan
             </a>
-            <a href="#contact" class="text-lg font-semibold hover:text-[#19A7CE] transition text-black font-poppins">
+            <a href="/hasil" :active="request()->is('/hasil')" class="text-lg font-semibold hover:text-gray-400 transition text-black font-poppins">
                 Hasil
             </a>
         </nav>

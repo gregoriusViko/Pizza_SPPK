@@ -19,32 +19,63 @@
     </header>
 
     <!-- Main Content -->
-    <main class="content flex-grow mb-8 mt-4 pt-28 px-12 mx-24"> <!-- Gunakan padding top sesuai tinggi header -->
-        <div class="flex place-content-center font-poppins font-medium mt-2 text-2xl">TABEL TRANSAKSI PIZZA</div>
-        <div class="border border-black rounded-md mt-5 p-4 overflow-auto" style="max-height: 420px;">
-            <table class="table table-bordered table-striped">
-                <thead>
+    <main class="content flex-grow mb-5 mt-4 pt-28 px-12 mx-24"> <!-- Gunakan padding top sesuai tinggi header -->
+        <div class=" font-poppins font-medium text-xl">TABEL TRANSAKSI PIZZA per {hari}</div>
+        
+        <div class="border border-black rounded-md mt-3 p-4 ">
+            #tampilkan tabel pizza
+            {{-- <table class="rounded-md w-full text-sm text-left rtl:text-right text-black border border-black">
+                <thead class="text-xs text-white uppercase bg-blue-600">
                     <tr>
-                        @foreach($columns as $column)
-                            <th>{{ $column }}</th>
-                        @endforeach
+                        <th scope="col" class="px-6 py-3">ID</th>
+                        <th scope="col" class="px-6 py-3">Tanggal-Waktu</th>
+                        <th scope="col" class="px-6 py-3">Nama Produk</th>
+                        <th scope="col" class="px-6 py-3">Harga Produk</th>
+                        <th scope="col" class="px-6 py-3">Jumlah</th>
+                        <th scope="col" class="px-6 py-3">Total Pembelian</th>
+                        <th scope="col" class="px-6 py-3">Metode Pembelian</th>
+                        <th scope="col" class="px-6 py-3">Nama Pembeli</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($data as $row)
+                    @foreach ($orders as $order)
                         <tr>
-                            @foreach($columns as $column)
-                                <td>{{ $row[$column] }}</td>
-                            @endforeach
+                            <th scope="col" class="px-6 py-3">
+                                {{ $index }}
+                                @php
+                                    $index += 1;
+                                @endphp
+                            </th>
+                            <th scope="col" class="px-6 py-3 ">
+                                {{ $order->order_time->isoFormat('dddd D/MM/YYYY - HH.mm') }}
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                {{ $order->product->type->name }}
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                {{ Number::currency($order->price, in: 'idr') }}
+                            </th>
+                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
+                                {{ WeightConverter::convert($order->quantity_kg) }}
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                {{ Number::currency($order->price * $order->quantity_kg, in: 'idr') }}
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                {{ ucwords($order->payment_proof) }}
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                {{ strtok($order->buyer->name, ' ') }}
+                            </th>
                         </tr>
                     @endforeach
                 </tbody>
-            </table>
+            </table> --}}
         </div>
         <div class="flex place-content-end">
             <button
                 class=" mt-5 px-5 py-2 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105"
-                onclick="request()->is('/pengolahan')">OLAH</button>
+                onclick="request()->is('/pengolahan')">NEXT</button>
         </div>
     </main>
     <button id="scrollToTopBtn"
@@ -55,10 +86,7 @@
         </svg> --}}
         <ion-icon name="arrow-up-circle-outline" class="h-6 w-6"></ion-icon>
     </button>
-    <div class="content flex-grow">
-
-    </div>
-
+   
     @include('Partials.Footer') {{-- Sesuaikan jalur folder --}}
 </body>
 <script>
