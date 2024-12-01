@@ -30,6 +30,12 @@ Route::get('/Pengolahan_6', function () {
 Route::get('/Pengolahan_7', function () {
     return view('Pengolahan_7');
 });
+Route::get('/Pengolahan_8', function () {
+    return view('Pengolahan_8');
+});
+Route::get('/Hasil', function () {
+    return view('Hasil');
+});
 
 
 Route::get('/coba', function () {

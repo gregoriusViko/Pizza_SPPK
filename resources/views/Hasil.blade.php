@@ -19,58 +19,69 @@
     </header>
 
     <main class="content flex-grow mb-5 mt-4 pt-28 px-12 mx-24">
-        <h2 class="text-xl font-semibold text-black mb-4">Tabel Calon Pembentukan Asosiasi</h2>
+        <h2 class="text-xl font-semibold text-black mb-4">Tabel Pembentukan Asosiasi</h2>
 
 
         <div class="bg-[#D9D9D9] p-4 w-full h-96 flex flex-col items-start">
-            <h2 class="text-xl text-black mb-4 text-left">
-                Pembentukan Asosiasi didapatkan dari kombinasi {} item dan melakukan perhitungan untuk mendapatkan
-                confidence
-            </h2>
             <h2 class="text-xl  text-black mb-4 text-left">
-                Min Confident : { }
+                Berikut aturan asosiasi yang memenuhi aturan Minimal Support = {} dan Minimum Confidence = {}
             </h2>
+
+            <!-- Box scrollable -->
             <div class="bg-[#746868] w-[99%] h-70 overflow-y-scroll p-4">
                 <table class="table table-bordered table-striped w-full border border-black text-white">
                     <thead class="border border-black">
                         <tr class="border border-black">
                             {{-- @foreach ($columns as $column)
-                            <th>{{ $column }}</th>
-                        @endforeach --}}
+                                <th>{{ $column }}</th>
+                            @endforeach --}}
+                            <th class="border border-black">No</th>
                             <th class="border border-black">Aturan</th>
-                            <th class="border border-black" colspan="2">Confidence</th>
+                            <th class="border border-black">Lift</th>
+                            <th class="border border-black">Support(%)</th>
+                            <th class="border border-black">Confidence(%)</th>
                         </tr>
                     </thead>
                     <tbody class="border border-black">
                         {{-- @foreach ($data as $row)
+                            <tr>
+                                @foreach ($columns as $column)
+                                    <td>{{ $row[$column] }}</td>
+                                @endforeach
+                            </tr>
+                        @endforeach --}}
                         <tr>
-                            @foreach ($columns as $column)
-                                <td>{{ $row[$column] }}</td>
-                            @endforeach
-                        </tr>
-                    @endforeach --}}
-                        <tr>
+                            <td class="border border-black">1</td>
                             <td class="border border-black">Jika A maka B</td>
-                            <td class="border border-black">perhitungannya</td>
-                            <td class="border border-black">Nilainya conf</td>
+                            <td class="border border-black">Nilainya lift</td>
+                            <td class="border border-black">Nilainya Support</td>
+                            <td class="border border-black">Nilainya Conf</td>
                         </tr>
-
+                        <tr>
+                            <td class="border border-black">2</td>
+                            <td class="border border-black">Jika A maka B</td>
+                            <td class="border border-black">Nilainya lift</td>
+                            <td class="border border-black">Nilainya Support</td>
+                            <td class="border border-black">Nilainya Conf</td>
+                        </tr>
+                        
+                        
                     </tbody>
                 </table>
+                {{-- <h2 class="text-xl font-bold bg-[#746868] text-white sticky top-0 p-2 text-center">
+                Aturan | Confidence
+              </h2>
+              
+              <!-- Konten panjang -->
+              <div class="text-white space-y-4">
+                <p>Ini adalah bagian pertama dari konten panjang.</p>
+                <p>Ini adalah bagian kedua dari konten panjang.</p>
+                <p>Ini adalah bagian ketiga dari konten panjang.</p>
+                <p>Ini adalah bagian keempat dari konten panjang.</p>
+                <p>Ini adalah bagian kelima dari konten panjang.</p>
+                <p>Konten ini bisa terus bertambah sesuai kebutuhan Anda.</p>
+              </div> --}}
             </div>
-            {{-- <h2 class="text-xl font-bold bg-[#746868] text-white sticky top-0 p-2 text-center">
-            Aturan | Confidence
-          </h2>
-          
-          <!-- Konten panjang -->
-          <div class="text-white space-y-4">
-            <p>Ini adalah bagian pertama dari konten panjang.</p>
-            <p>Ini adalah bagian kedua dari konten panjang.</p>
-            <p>Ini adalah bagian ketiga dari konten panjang.</p>
-            <p>Ini adalah bagian keempat dari konten panjang.</p>
-            <p>Ini adalah bagian kelima dari konten panjang.</p>
-            <p>Konten ini bisa terus bertambah sesuai kebutuhan Anda.</p>
-          </div> --}}
         </div>
 
 
@@ -86,8 +97,8 @@
     </button>
     <button
         class="mt-[-10px] w-[80px] h-[40px] bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105 ml-auto mr-[150px]"
-        onclick="window.location.href='/Pengolahan_8'">
-        NEXT
+        onclick="window.location.href='/'">
+        HOME`
     </button>
 
     @include('Partials.Footer') {{-- Sesuaikan jalur folder --}}
