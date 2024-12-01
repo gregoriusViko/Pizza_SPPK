@@ -15,7 +15,7 @@
 <body class="min-h-screen flex flex-col">
     <!-- Header -->
     <header class="fixed top-0 left-0 w-full bg-white text-black border border-red shadow-lg z-10 h-28">
-        @include('partials.header') {{-- Sesuaikan jalur folder --}}
+        @include('Partials.header') {{-- Sesuaikan jalur folder --}}
     </header>
 
     <!-- Main Content -->
@@ -24,32 +24,32 @@
             <div class="font-poppins font-normal text-base ml-5 p-2">Informasi</div>
             <div class="font-poppins font-light text-sm pb-2 ml-10">Dengan data yang tersedia, User dapat menentukan rentang waktu yang diinginkan untuk melihat tren penjualan. User melakukan input Minimum Support dan Minimum Confident</div>
         </div>
-        
-        <div class="border border-black rounded-md mt-2 p-4 ">
-            <div class="grid grid-cols-2 grid-flow-row gap-y-2">
-                <div class="font-poppins font-normal text-base">Kolom yang dibutuhkan: </div>
-                <div class="">
-                    <textarea class="pl-3 py-2 font-poppins font-normal text-base border  border-black rounded-md w-full h-24 resize-none">daftar item kolom </textarea>
-                </div>
-                <div class="font-poppins font-normal text-base">Rentang waktu (hari)</div>
-                <div class="">
-                    <input type="number" class="pl-3 py-2  border  border-black rounded-md">
-                </div>
-                <div class="font-poppins font-normal text-base">Minimum Support</div>
-                <div class="">
-                    <input type="number" class="pl-3 py-2  border  border-black rounded-md">
-                </div>
-                <div class="font-poppins font-normal text-base">Minimum Confident</div>
-                <div class="">
-                    <input type="number" class="pl-3 py-2 font-normal text-base  border  border-black rounded-md">
+        <form action="{{ route('olahdata.kelompok-hari') }}" method="get">
+            <div class="border border-black rounded-md mt-2 p-4 ">
+                <div class="grid grid-cols-2 grid-flow-row gap-y-2">
+                    <div class="font-poppins font-normal text-base">Kolom yang dibutuhkan: </div>
+                    <div class="">
+                        <textarea class="pl-3 py-2 font-poppins font-normal text-base border  border-black rounded-md w-full h-24 resize-none">daftar item kolom </textarea>
+                    </div>
+                    <div class="font-poppins font-normal text-base">Rentang waktu (hari)</div>
+                    <div class="">
+                        <input type="number" class="pl-3 py-2  border  border-black rounded-md" name="hari">
+                    </div>
+                    <div class="font-poppins font-normal text-base">Minimum Support</div>
+                    <div class="">
+                        <input type="number" class="pl-3 py-2  border  border-black rounded-md" name="min_support">
+                    </div>
+                    <div class="font-poppins font-normal text-base">Minimum Confident</div>
+                    <div class="">
+                        <input type="number" class="pl-3 py-2 font-normal text-base  border  border-black rounded-md" name="min_coff">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="flex place-content-end">
-            <button
-                class="mt-5 px-5 py-2 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105"
-                onclick="request()->is('/pengolahan')">NEXT</button>
-        </div>
+            <div class="flex place-content-end">
+                <button
+                    class="mt-5 px-5 py-2 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105" type="submit">NEXT</button>
+            </div>
+        </form>
     </main>
     <button id="scrollToTopBtn"
         class="fixed bottom-6 right-8 bg-[#405D72] text-white px-3 pt-2 pb-2 rounded-full shadow-lg place-content-center hover:bg-indigo-600 transition duration-300 hidden"

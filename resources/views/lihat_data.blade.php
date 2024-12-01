@@ -15,36 +15,41 @@
 <body class="min-h-screen flex flex-col">
     <!-- Header -->
     <header class="fixed top-0 left-0 w-full bg-white text-black border border-red shadow-lg z-10 h-28">
-        @include('partials.header') {{-- Sesuaikan jalur folder --}}
+        @include('Partials.header') {{-- Sesuaikan jalur folder --}}
     </header>
 
     <!-- Main Content -->
     <main class="content flex-grow mb-8 mt-4 pt-28 px-12 mx-24"> <!-- Gunakan padding top sesuai tinggi header -->
         <div class="flex place-content-center font-poppins font-medium mt-2 text-2xl">TABEL TRANSAKSI PIZZA</div>
         <div class="border border-black rounded-md mt-5 p-4 overflow-auto" style="max-height: 420px;">
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        @foreach($columns as $column)
-                            <th>{{ $column }}</th>
-                        @endforeach
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($data as $row)
-                        <tr>
-                            @foreach($columns as $column)
-                                <td>{{ $row[$column] }}</td>
+            <div class="container mt-5">
+                <div class="card">
+                    <h1>Data CSV yang Dibaca</h1>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                @foreach ($title as $subtitle)
+                                    <th>{{ $subtitle }}</th>
+                                @endforeach
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($csvData as $row)
+                                <tr>
+                                    @foreach ($row as $data)
+                                        <td>{{ $data }}</td>
+                                    @endforeach
+                                </tr>
                             @endforeach
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="flex place-content-end">
             <button
                 class=" mt-5 px-5 py-2 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105"
-                onclick="request()->is('/pengolahan')">OLAH</button>
+                onclick="window.location.href = '{{ route('olahdata.input') }}'">OLAH</button>
         </div>
     </main>
     <button id="scrollToTopBtn"
