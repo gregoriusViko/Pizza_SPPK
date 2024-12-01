@@ -34,8 +34,14 @@ class DataController extends Controller
         return view('lihat_data', compact(['csvData', 'title']));
     }
 
-    function dataKelompok()
+    function dataKelompok(Request $request)
     {
+        $request->validate([
+            'hari' => 'required|numeric',
+            'min_sup' => 'required|numeric|max:100',
+            'min_conf' => 'required|numeric|max:100',
+        ]);
+
         // Lokasi file CSV
         $path = 'kode_python/pizza_sales_modified.csv';
 
@@ -45,6 +51,8 @@ class DataController extends Controller
         // Membuka file CSV
         if ($handle = fopen($path, 'r')) {
             $title = fgetcsv($handle); // Membaca baris pertama (judul)
+            $title[] = array_splice($title, 2, 1)[0];
+            $title[] = array_splice($title, 2, 1)[0];
 
             while ($data = fgetcsv($handle, 1000, ',')) {
                 // Misalkan kolom tanggal ada di indeks 0, ubah tanggal menjadi objek DateTime
@@ -63,8 +71,9 @@ class DataController extends Controller
         $groupedData = [];
         foreach ($csvData as $row) {
             $date = $row[count($row) - 1]; // Ambil objek DateTime dari data terakhir
+            $row[] = array_splice($row, 2, 1)[0];
             $startDate = new \DateTime('2015-01-01'); // Tanggal mulai 1 Januari
-            $interval = new \DateInterval('P5D'); // Interval 5 hari
+            $interval = new \DateInterval('P'.$request->hari.'D'); // Interval 5 hari
 
             // Tentukan grup berdasarkan interval 5 hari
             $period = new \DatePeriod($startDate, $interval, new \DateTime('2015-12-31'));

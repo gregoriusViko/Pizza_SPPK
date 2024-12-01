@@ -15,7 +15,7 @@
 <body class="min-h-screen flex flex-col">
     <!-- Header -->
     <header class="fixed top-0 left-0 w-full bg-white text-black border border-red shadow-lg z-10 h-28">
-        @include('partials.header') {{-- Sesuaikan jalur folder --}}
+        @include('Partials.header') {{-- Sesuaikan jalur folder --}}
     </header>
 
     <main class="content flex-grow mb-5 mt-4 pt-28 px-12 mx-24">  
