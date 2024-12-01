@@ -37,11 +37,11 @@
                     </div>
                     <div class="font-poppins font-normal text-base">Minimum Support</div>
                     <div class="">
-                        <input type="number" class="pl-3 py-2  border  border-black rounded-md" name="min_support">
+                        <input type="number" class="pl-3 py-2  border  border-black rounded-md" name="min_sup">
                     </div>
                     <div class="font-poppins font-normal text-base">Minimum Confident</div>
                     <div class="">
-                        <input type="number" class="pl-3 py-2 font-normal text-base  border  border-black rounded-md" name="min_coff">
+                        <input type="number" class="pl-3 py-2 font-normal text-base  border  border-black rounded-md" name="min_conf">
                     </div>
                 </div>
             </div>
