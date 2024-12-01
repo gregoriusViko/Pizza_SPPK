@@ -9,7 +9,7 @@
 <body class="min-h-screen flex flex-col">
     <!-- Header -->
     <header class="fixed top-0 left-0 w-full bg-white text-black border border-red shadow-lg z-10 h-28">
-        @include('partials.header') {{-- Sesuaikan jalur folder --}}
+        @include('Partials.header') {{-- Sesuaikan jalur folder --}}
     </header>
 
     <!-- Main Content -->

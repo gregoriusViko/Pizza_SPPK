@@ -15,13 +15,13 @@
 <body class="min-h-screen flex flex-col">
     <!-- Header -->
     <header class="fixed top-0 left-0 w-full bg-white text-black border border-red shadow-lg z-10 h-28">
-        @include('partials.header') {{-- Sesuaikan jalur folder --}}
+        @include('Partials.header') {{-- Sesuaikan jalur folder --}}
     </header>
 
     <!-- Main Content -->
     <main class="content flex-grow mb-5 mt-4 pt-28 px-12 mx-24"> <!-- Gunakan padding top sesuai tinggi header -->
         <div class=" font-poppins font-medium text-xl">TABEL TRANSAKSI PIZZA per {hari}</div>
-        
+
         <div class="border border-black rounded-md mt-3 p-4 ">
             #tampilkan tabel pizza
             {{-- <table class="rounded-md w-full text-sm text-left rtl:text-right text-black border border-black">
@@ -71,6 +71,31 @@
                     @endforeach
                 </tbody>
             </table> --}}
+            @php
+                $i = 1;
+            @endphp
+
+            @foreach ($groupedData as $kelompok)
+                <h1>Tabel kelompok ke {{ $i++ }}</h1>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            @foreach ($title as $subtitle)
+                                <th>{{ $subtitle }}</th>
+                            @endforeach
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($kelompok as $row)
+                            <tr>
+                                @foreach ($row as $data)
+                                    <td>{{ gettype($data)!='object' ? $data : $data->format('d-m-Y') }}</td>
+                                @endforeach
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            @endforeach
         </div>
         <div class="flex place-content-end">
             <button
@@ -86,7 +111,7 @@
         </svg> --}}
         <ion-icon name="arrow-up-circle-outline" class="h-6 w-6"></ion-icon>
     </button>
-   
+
     @include('Partials.Footer') {{-- Sesuaikan jalur folder --}}
 </body>
 <script>
