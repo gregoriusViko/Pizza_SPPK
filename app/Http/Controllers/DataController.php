@@ -90,8 +90,13 @@ class DataController extends Controller
                 }
             }
         }
+
+        $totalKelompok = count($groupedData);
+        $page = $request->input('page', 1);
+        $offset = ($page -1 )* $totalKelompok;
+        $paginated = array_slice ($groupedData, $offset, $totalKelompok);
         // Mengirimkan data yang telah dikelompokkan ke view
         // dd($csvData);
-        return view('Pengolahan_2', compact('groupedData', 'title'));
+        return view('Pengolahan_2', compact('paginated', 'title'));
     }
 }

@@ -59,7 +59,7 @@
         @for ($i = 1; $i <= 10; $i++)
             <li>
                 <a href="{{ route('dataTampil', ['page' => $i]) }}"
-                    class="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 {{ $i == request('page', 1) ? 'bg-blue-500 text-white' : 'text-black' }}">
+                    class="px-4 py-2 rounded-lg bg-[#19A7CE] hover:bg-gray-300 {{ $i == request('page', 1) ? 'bg-blue-500 text-white' : 'text-black' }}">
                     {{ $i }}
                 </a>
             </li>
