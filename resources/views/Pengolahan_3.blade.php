@@ -45,11 +45,7 @@
         </div>
     </main>
 
-    <button id="scrollToTopBtn"
-        class="fixed bottom-6 right-8 bg-[#405D72] text-white px-3 pt-2 pb-2 rounded-full shadow-lg place-content-center hover:bg-indigo-600 transition duration-300 hidden"
-        onclick="scrollToTop()">
-        <ion-icon name="arrow-up-circle-outline" class="h-6 w-6"></ion-icon>
-    </button>
+    <x-buttonScroll />
     <form action="{{ route('olahdata.data-tabular') }}" method="get">
         <input type="hidden" name="min_sup" value="{{ $request->min_sup }}">
         <input type="hidden" name="min_conf" value="{{ $request->min_conf }}">
@@ -61,23 +57,3 @@
 
     @include('Partials.Footer') {{-- Sesuaikan jalur folder --}}
 </body>
-
-<script>
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
-    // Tampilkan tombol saat pengguna scroll ke bawah
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-            scrollToTopBtn.classList.remove("hidden");
-        } else {
-            scrollToTopBtn.classList.add("hidden");
-        }
-    });
-
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-    }
-</script>

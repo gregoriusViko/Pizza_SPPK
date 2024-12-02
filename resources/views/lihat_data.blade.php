@@ -25,63 +25,55 @@
             <div class="container mt-5">
                 <div class="card">
                     <h1>Data CSV yang Dibaca</h1>
-                    <table border="1">
+
+                    <!-- Tampilkan tabel data -->
+                    <table border="1" class="w-full">
                         <thead>
                             <tr>
                                 @foreach ($title as $subtitle)
-                                    <th>{{ $subtitle }}</th>
+                                    <th class="px-4 py-2">{{ $subtitle }}</th>
                                 @endforeach
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($csvData as $row)
+                            @foreach ($paginatedData as $row)
                                 <tr>
                                     @foreach ($row as $data)
-                                        <td>{{ $data }}</td>
+                                        <td class="px-4 py-2">{{ $data }}</td>
                                     @endforeach
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
+
+                    
+
                 </div>
+            
             </div>
+
         </div>
+<!-- Menampilkan angka tab di bawah tabel -->
+<div class="pagination mt-4 flex justify-center">
+    <ul class="flex space-x-2">
+        @for ($i = 1; $i <= 10; $i++)
+            <li>
+                <a href="{{ route('dataTampil', ['page' => $i]) }}"
+                    class="px-4 py-2 rounded-lg bg-[#19A7CE] hover:bg-gray-300 {{ $i == request('page', 1) ? 'bg-blue-500 text-white' : 'text-black' }}">
+                    {{ $i }}
+                </a>
+            </li>
+        @endfor
+    </ul>
+</div>
         <div class="flex place-content-end">
             <button
-                class=" mt-5 px-5 py-2 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105"
+                class="mt-5 px-5 py-2 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105"
                 onclick="window.location.href = '{{ route('olahdata.input') }}'">OLAH</button>
         </div>
     </main>
-    <button id="scrollToTopBtn"
-        class="fixed bottom-6 right-8 bg-[#405D72] text-white px-3 pt-2 pb-2 rounded-full shadow-lg place-content-center hover:bg-indigo-600 transition duration-300 hidden"
-        onclick="scrollToTop()">
-        {{-- <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
-        </svg> --}}
-        <ion-icon name="arrow-up-circle-outline" class="h-6 w-6"></ion-icon>
-    </button>
-    <div class="content flex-grow">
 
-    </div>
+    <x-buttonScroll />
 
     @include('Partials.Footer') {{-- Sesuaikan jalur folder --}}
 </body>
-<script>
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
-    // Tampilkan tombol saat pengguna scroll ke bawah
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-            scrollToTopBtn.classList.remove("hidden");
-        } else {
-            scrollToTopBtn.classList.add("hidden");
-        }
-    });
-
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-    }
-</script>
