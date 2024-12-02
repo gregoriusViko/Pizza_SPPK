@@ -8,27 +8,6 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class DataController extends Controller
 {
-    
-    public function bacaCsv($path)
-    {
-        // Data CSV yang dibaca
-        $csvData = [];
-
-        // Membuka file CSV
-        if ($handle = fopen($path, 'r')) {
-            $title = fgetcsv($handle); // Membaca baris pertama (judul)
-            while (($data = fgetcsv($handle, 1000, ',')) !== false) {
-                // Menyimpan setiap baris data ke dalam array
-                $csvData[] = $data;
-            }
-
-            // Menutup file setelah selesai
-            fclose($handle);
-        }
-
-        return [array_slice($csvData, 0, 30), $title];
-    }
-
     function dataTampil()
     {
         $path = 'kode_python/pizza_sales_modified.csv';
@@ -122,5 +101,25 @@ class DataController extends Controller
             'min_sup' => 'required|numeric|max:100',
             'min_conf' => 'required|numeric|max:100',
         ]);
+    }
+
+    public function bacaCsv($path)
+    {
+        // Data CSV yang dibaca
+        $csvData = [];
+
+        // Membuka file CSV
+        if ($handle = fopen($path, 'r')) {
+            $title = fgetcsv($handle); // Membaca baris pertama (judul)
+            while (($data = fgetcsv($handle, 1000, ',')) !== false) {
+                // Menyimpan setiap baris data ke dalam array
+                $csvData[] = $data;
+            }
+
+            // Menutup file setelah selesai
+            fclose($handle);
+        }
+
+        return [array_slice($csvData, 0, 30), $title];
     }
 }
