@@ -25,11 +25,13 @@
                     untuk menganalisa tren dalam rentang waktu yang dapat ditentukan sehingga akan membantu membuat
                     strategi dalam meningkatkan usaha penjualan pizza anda.
                 </p>
-                <button
-                    class="ml-80 mt-12 border border-gray px-6 py-3 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#19A7CE] hover:scale-105"
-                    onclick="request()->is('/lihatdata')">
+                <button onclick="window.location.href='/lihatdata'"
+                    class="ml-80 mt-12 border border-gray px-6 py-3 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#19A7CE] hover:scale-105">
                     MULAI
                 </button>
+
+
+
             </div>
 
             <div class="w-full md:w-2/5 p-4 flex items-center justify-center ">

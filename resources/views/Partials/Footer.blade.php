@@ -15,17 +15,25 @@
             <div class="grid grid-cols-3 place-items-center">
                 <div class="">
                     <p class="text-sm font-bold text-black">
-                        <a href="link-to-data-page" class="hover:underline">Lihat Data</a>
+                        <a href="/lihatdata" :active="request() - > is('/lihatdata')"
+                            class="text-lg font-semibold hover:text-gray-400 transition text-black font-poppins">
+                            Lihat Data
+                        </a>
                     </p>
                 </div>
                 <div class="">
                     <p class="text-sm font-bold text-black">
-                        <a href="link-to-processing-page" class="hover:underline">Pengolahan</a>
+                        <a href="/inputPengolahan" :active="request() - > is('/pengolahan')"
+                            class="text-lg font-semibold hover:text-gray-400 transition text-black font-poppins">
+                            Pengolahan
+                        </a>
                     </p>
                 </div>
                 <div class="">
                     <p class="text-sm font-bold text-black">
-                        <a href="link-to-results-page" class="hover:underline">Hasil</a>
+                        <a href="/hasil" :active="request()->is('/hasil')" class="text-lg font-semibold hover:text-gray-400 transition text-black font-poppins">
+                            Hasil
+                        </a>
                     </p>
                 </div>
 
@@ -64,6 +72,7 @@
 <style>
     /* Add Poppins font */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
     .font-poppins {
         font-family: 'Poppins', sans-serif;
     }

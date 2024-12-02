@@ -23,7 +23,7 @@
         <div class=" font-poppins font-medium text-xl">TABEL TRANSAKSI PIZZA per {hari}</div>
 
         <div class="border border-black rounded-md mt-3 p-4 ">
-            #tampilkan tabel pizza
+            {{-- #tampilkan tabel pizza --}}
             {{-- <table class="rounded-md w-full text-sm text-left rtl:text-right text-black border border-black">
                 <thead class="text-xs text-white uppercase bg-blue-600">
                     <tr>
@@ -112,9 +112,12 @@
         </div> --}}
         <div class="flex place-content-end">
             <button
-                class=" mt-5 px-5 py-2 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105"
-                onclick="request()->is('/pengolahan')">NEXT</button>
+                class="mt-5 px-5 py-2 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105"
+                onclick="window.location.href='/Pengolahan_3'">
+                NEXT
+            </button>
         </div>
+        
     </main>
     <x-buttonScroll />
 
