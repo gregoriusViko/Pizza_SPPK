@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
@@ -109,7 +110,7 @@ class DataController extends Controller
         return view('Pengolahan_3', compact(['csvData', 'title', 'request']));
     }
 
-    function minSupport(Request $request){
+    function minSupport1(Request $request){
         $request->validate([
             'min_sup' => 'required|numeric|max:100',
             'min_conf' => 'required|numeric|max:100',
@@ -126,7 +127,41 @@ class DataController extends Controller
         $csvData = $hasil[0];
         $title = $hasil[1];
 
-        return view('Pengolahan_4', compact(['csvData', 'title', 'request']));
+        $temp = [];
+        $next_url = route('hasil.conf');
+        foreach($csvData as $data){
+            if(!Str::contains($data[1], ',')){
+                $temp[] = $data;
+            }else{
+                $next_url = route('hasil.min-support-2');
+            }
+        }
+        $csvData = $temp;
+        return view('Pengolahan_4', compact(['csvData', 'title', 'request', 'next_url']));
+    }
+
+    function minSupport2(Request $request){
+        $request->validate([
+            'min_conf' => 'required|numeric|max:100'
+        ]);
+
+        $path = 'kode_python/support_value.csv';
+        $hasil = $this->bacaCsv($path);
+
+        $csvData = $hasil[0];
+        $title = $hasil[1];
+
+        $temp = [];
+        $next_url = route('hasil.conf');
+        foreach($csvData as $data){
+            if(substr_count($data, ',') === 2){
+                $temp[] = $data;
+            }elseif(substr_count($data, ',') === 3){
+                $next_url = route('hasil.min-support-3');
+            }
+        }
+        $csvData = $temp;
+        return view('Pengolahan_5', compact(['csvData', 'title', 'request', 'next_url']));
     }
 
     public function bacaCsv($path)

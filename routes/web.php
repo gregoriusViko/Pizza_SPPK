@@ -24,7 +24,10 @@ Route::prefix('/olah-data')->name('olahdata.')->group(function(){
 });
 
 Route::prefix('/hasil')->controller(DataController::class)->name('hasil.')->group(function(){
-    Route::post('/min-support', 'minSupport')->name('min-support');
+    Route::post('/min-support-1', 'minSupport1')->name('min-support-1');
+    Route::post('/min-support-2', 'minSupport2')->name('min-support-2');
+    Route::post('/min-support-3', 'minSupport3')->name('min-support-3');
+    Route::post('/conf', 'minSupport3')->name('conf');
 });
 
 Route::get('/Pengolahan_5', function () {

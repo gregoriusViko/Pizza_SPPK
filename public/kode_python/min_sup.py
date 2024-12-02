@@ -10,7 +10,7 @@ def cari_support(min_sup):
         # Menggunakan algoritma Apriori untuk menemukan itemset yang sering muncul
         df_pivot.drop('cluster', axis=1, inplace=True)
         frequent_itemsets = apriori(df_pivot, min_support=min_sup/100, use_colnames=True)
-        frequent_itemsets.to_csv('kode_python/support_value.csv')
+        frequent_itemsets.to_csv('kode_python/support_value.csv', index=False)
         
     except Exception as e:
         print(json.dumps({
