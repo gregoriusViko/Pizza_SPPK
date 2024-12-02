@@ -101,6 +101,7 @@
             <ul class="flex space-x-2">
                 @for ($i = 1; $i <= count($paginated)-1; $i++)
                     <li>
+                        
                         <a href="{{ route('olahdata.dataKelompok', ['page' => $i]) }}"
                             class="px-4 py-2 rounded-lg bg-gray-200 hover:bg-[#19A7CE] {{ $i == request('page', 1) ? 'bg-blue-500 text-white' : 'text-black' }}">
                             {{ $i }}
