@@ -97,11 +97,16 @@
                 </table>
             @endforeach
         </div>
-        <div class="flex place-content-end">
-            <button
-                class=" mt-5 px-5 py-2 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105"
-                onclick="request()->is('/pengolahan')">NEXT</button>
-        </div>
+        <form action="{{ route('olahdata.data-tabular') }}" method="get">
+            <div class="flex place-content-end">
+                <input type="hidden" name="hari" value="{{ $request->hari }}">
+                <input type="hidden" name="min_sup" value="{{ $request->min_sup }}">
+                <input type="hidden" name="min_conf" value="{{ $request->min_conf }}">
+                <button
+                    class=" mt-5 px-5 py-2 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105"
+                    type="submit">NEXT</button>
+            </div>
+        </form>
     </main>
     <button id="scrollToTopBtn"
         class="fixed bottom-6 right-8 bg-[#405D72] text-white px-3 pt-2 pb-2 rounded-full shadow-lg place-content-center hover:bg-indigo-600 transition duration-300 hidden"

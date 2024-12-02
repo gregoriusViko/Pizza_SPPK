@@ -8,11 +8,9 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class DataController extends Controller
 {
-    function dataTampil()
+    
+    public function bacaCsv($path)
     {
-        // Lokasi file CSV
-        $path = 'kode_python/pizza_sales_modified.csv';
-
         // Data CSV yang dibaca
         $csvData = [];
 
@@ -28,8 +26,15 @@ class DataController extends Controller
             fclose($handle);
         }
 
-        $csvData = array_slice($csvData, 0, 30);
+        return [array_slice($csvData, 0, 30), $title];
+    }
 
+    function dataTampil()
+    {
+        $path = 'kode_python/pizza_sales_modified.csv';
+        $hasil = $this->bacaCsv($path);
+        $csvData = $hasil[0];
+        $title = $hasil[1];
         // Mengirimkan data CSV ke view untuk ditampilkan
         return view('lihat_data', compact(['csvData', 'title']));
     }
@@ -87,6 +92,35 @@ class DataController extends Controller
         }
         // Mengirimkan data yang telah dikelompokkan ke view
         // dd($csvData);
-        return view('Pengolahan_2', compact('groupedData', 'title'));
+        return view('Pengolahan_2', compact('groupedData', 'title', 'request'));
+    }
+
+    function dataTabular(Request $request){
+        $request->validate([
+            'hari' => 'required|numeric',
+            'min_sup' => 'required|numeric|max:100',
+            'min_conf' => 'required|numeric|max:100',
+        ]);
+
+        $process = new Process(['python3', 'kode_python/convert_to_tabular.py', $request->hari]);
+        $process->run();
+        
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+        $path = 'kode_python/tabel_tabular.csv';
+        $hasil = $this->bacaCsv($path);
+
+        $csvData = $hasil[0];
+        $title = $hasil[1];
+
+        return view('Pengolahan_3', compact(['csvData', 'title', 'request']));
+    }
+
+    function minSupport1(Request $request){
+        $request->validate([
+            'min_sup' => 'required|numeric|max:100',
+            'min_conf' => 'required|numeric|max:100',
+        ]);
     }
 }

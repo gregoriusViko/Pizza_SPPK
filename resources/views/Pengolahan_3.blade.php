@@ -26,31 +26,20 @@
 
                 <thead class="sticky top-0 bg-[#5f4b44]"> <!-- Sticky untuk baris pertama -->
                     <tr>
-                        <th class="px-1 py-2 border-b text-sm font-semibold"> </th>
-                        <th class="px-1 py-2 border-b text-sm font-semibold">Pizza1</th>
-                        <th class="px-1 py-2 border-b text-sm font-semibold">Pizza2</th>
-                        <th class="px-1 py-2 border-b text-sm font-semibold">Pizza3</th>
-                        <th class="px-1 py-2 border-b text-sm font-semibold">Pizza4</th>
-                        <th class="px-1 py-2 border-b text-sm font-semibold">Pizza5</th>
-                        <th class="px-1 py-2 border-b text-sm font-semibold">Pizza6</th>
-                        <th class="px-1 py-2 border-b text-sm font-semibold">Pizza7</th>
+                        @foreach ($title as $column)
+                            <th class="px-1 py-2 border-b text-sm font-semibold">{{ $column }}</th>
+                        @endforeach
                     </tr>
                 </thead>
 
                 <tbody>
-                    @for ($i = 1; $i <= 53; $i++)
-                        <!-- Iterasi minggu -->
+                    @foreach ($csvData as $row)
                         <tr class="hover:bg-[#8c7368]">
-                            <td class="px-1 py-2 border-b">Minggu {{ $i }}</td>
-                            <td class="px-1 py-2 border-b"></td>
-                            <td class="px-1 py-2 border-b"></td>
-                            <td class="px-1 py-2 border-b"></td>
-                            <td class="px-1 py-2 border-b"></td>
-                            <td class="px-1 py-2 border-b"></td>
-                            <td class="px-1 py-2 border-b"></td>
-                            <td class="px-1 py-2 border-b"></td>
+                            @foreach ($row as $data)
+                                <td class="px-1 py-2 border-b">{{ $data }}</td>
+                            @endforeach
                         </tr>
-                    @endfor
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -61,11 +50,14 @@
         onclick="scrollToTop()">
         <ion-icon name="arrow-up-circle-outline" class="h-6 w-6"></ion-icon>
     </button>
-    <button
-    class="mt-[-10px] w-[80px] h-[40px] bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105 ml-auto mr-[150px]"
-    onclick="window.location.href='/Pengolahan_4'">
-    NEXT
-</button>
+    <form action="{{ route('olahdata.data-tabular') }}" method="get">
+        <input type="hidden" name="min_sup" value="{{ $request->min_sup }}">
+        <input type="hidden" name="min_conf" value="{{ $request->min_conf }}">
+        <button
+            class="mt-[-10px] w-[80px] h-[40px] bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105 ml-auto mr-[150px]"
+            onclick="window.location.href='/Pengolahan_4'">NEXT
+        </button>
+    </form>
 
     @include('Partials.Footer') {{-- Sesuaikan jalur folder --}}
 </body>

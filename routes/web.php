@@ -11,11 +11,12 @@ Route::get('/lihatdata', [DataController::class, 'dataTampil']);
 
 Route::prefix('/olah-data')->name('olahdata.')->group(function(){
     Route::view('/input', 'Pengolahan_1')->name('input');
+    Route::controller(DataController::class)->group(function(){
 
-    Route::get('/data-per-hari', [DataController::class, 'dataKelompok'])->name('kelompok-hari');
-});
-Route::get('/Pengolahan_3', function () {
-    return view('Pengolahan_3');
+        Route::get('/data-per-hari', 'dataKelompok')->name('kelompok-hari');
+
+        Route::get('/data-tabular', 'dataTabular')->name('data-tabular');
+    });
 });
 Route::get('/Pengolahan_4', function () {
     return view('Pengolahan_4');
