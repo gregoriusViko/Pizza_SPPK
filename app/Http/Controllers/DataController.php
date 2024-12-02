@@ -10,24 +10,11 @@ class DataController extends Controller
 {
     public function dataTampil(Request $request)
     {
-        // Lokasi file CSV
         $path = 'kode_python/pizza_sales_modified.csv';
-
-        // Data CSV yang dibaca
-        $csvData = [];
-
-        // Membuka file CSV
-        if ($handle = fopen($path, 'r')) {
-            $title = fgetcsv($handle); // Membaca baris pertama (judul)
-            while (($data = fgetcsv($handle, 1000, ',')) !== false) {
-                // Menyimpan setiap baris data ke dalam array
-                $csvData[] = $data;
-            }
-
-            // Menutup file setelah selesai
-            fclose($handle);
-        }
-
+        $hasil = $this->bacaCsv($path);
+        $csvData = $hasil[0];
+        $title = $hasil[1];
+        
         $totalData = count($csvData); // Total data
         $perPage = ceil($totalData / 10); // Jumlah data per tab (10 tab)
         $page = $request->input('page', 1); // Mengambil halaman yang diminta (default halaman 1)
@@ -97,6 +84,66 @@ class DataController extends Controller
         $paginated = array_slice ($groupedData, $offset, $totalKelompok);
         // Mengirimkan data yang telah dikelompokkan ke view
         // dd($csvData);
-        return view('Pengolahan_2', compact('paginated', 'title'));
+        return view('Pengolahan_2', compact('paginated', 'title', 'request'));
+    }
+
+    function dataTabular(Request $request){
+        $request->validate([
+            'hari' => 'required|numeric',
+            'min_sup' => 'required|numeric|max:100',
+            'min_conf' => 'required|numeric|max:100',
+        ]);
+
+        $process = new Process(['python3', 'kode_python/convert_to_tabular.py', $request->hari]);
+        $process->run();
+        
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+        $path = 'kode_python/tabel_tabular.csv';
+        $hasil = $this->bacaCsv($path);
+
+        $csvData = $hasil[0];
+        $title = $hasil[1];
+
+        return view('Pengolahan_3', compact(['csvData', 'title', 'request']));
+    }
+
+    function minSupport(Request $request){
+        $request->validate([
+            'min_sup' => 'required|numeric|max:100',
+            'min_conf' => 'required|numeric|max:100',
+        ]);
+        $process = new Process(['python3', 'kode_python/min_sup.py', $request->min_sup]);
+        $process->run();
+        
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+        $path = 'kode_python/support_value.csv';
+        $hasil = $this->bacaCsv($path);
+
+        $csvData = $hasil[0];
+        $title = $hasil[1];
+    }
+
+    public function bacaCsv($path)
+    {
+        // Data CSV yang dibaca
+        $csvData = [];
+
+        // Membuka file CSV
+        if ($handle = fopen($path, 'r')) {
+            $title = fgetcsv($handle); // Membaca baris pertama (judul)
+            while (($data = fgetcsv($handle, 1000, ',')) !== false) {
+                // Menyimpan setiap baris data ke dalam array
+                $csvData[] = $data;
+            }
+
+            // Menutup file setelah selesai
+            fclose($handle);
+        }
+
+        return [$csvData, $title];
     }
 }

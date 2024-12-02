@@ -97,27 +97,16 @@
                 </table>
             @endforeach
         </div>
-        {{-- <div class="pagination mt-4 flex justify-center">
-            <ul class="flex space-x-2">
-                @for ($i = 1; $i <= count($paginated)-1; $i++)
-                    <li>
-                        
-                        <a href="{{ route('olahdata.dataKelompok', ['page' => $i]) }}"
-                            class="px-4 py-2 rounded-lg bg-gray-200 hover:bg-[#19A7CE] {{ $i == request('page', 1) ? 'bg-blue-500 text-white' : 'text-black' }}">
-                            {{ $i }}
-                        </a>
-                    </li>
-                @endfor
-            </ul>
-        </div> --}}
-        <div class="flex place-content-end">
-            <button
-                class="mt-5 px-5 py-2 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105"
-                onclick="window.location.href='/Pengolahan_3'">
-                NEXT
-            </button>
-        </div>
-        
+        <form action="{{ route('olahdata.data-tabular') }}" method="get">
+            <div class="flex place-content-end">
+                <input type="hidden" name="hari" value="{{ $request->hari }}">
+                <input type="hidden" name="min_sup" value="{{ $request->min_sup }}">
+                <input type="hidden" name="min_conf" value="{{ $request->min_conf }}">
+                <button
+                    class=" mt-5 px-5 py-2 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105"
+                    type="submit">NEXT</button>
+            </div>
+        </form>
     </main>
     <x-buttonScroll />
 

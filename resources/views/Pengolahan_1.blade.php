@@ -29,19 +29,19 @@
                 <div class="grid grid-cols-2 grid-flow-row gap-y-2">
                     <div class="font-poppins font-normal text-base">Kolom yang dibutuhkan: </div>
                     <div class="">
-                        <textarea class="pl-3 py-2 font-poppins font-normal text-base border  border-black rounded-md w-full h-24 resize-none">daftar item kolom </textarea>
+                        <textarea class="pl-3 py-2 font-poppins font-normal text-base border  border-black rounded-md w-full h-24 resize-none" readonly>daftar item kolom </textarea>
                     </div>
                     <div class="font-poppins font-normal text-base">Rentang waktu (hari)</div>
                     <div class="">
-                        <input type="number" class="pl-3 py-2  border  border-black rounded-md" name="hari">
+                        <input type="number" class="pl-3 py-2  border  border-black rounded-md" name="hari" min="1" required>
                     </div>
                     <div class="font-poppins font-normal text-base">Minimum Support</div>
                     <div class="">
-                        <input type="number" class="pl-3 py-2  border  border-black rounded-md" name="min_sup">
+                        <input type="number" class="pl-3 py-2  border  border-black rounded-md" name="min_sup" min="1" required>
                     </div>
                     <div class="font-poppins font-normal text-base">Minimum Confident</div>
                     <div class="">
-                        <input type="number" class="pl-3 py-2 font-normal text-base  border  border-black rounded-md" name="min_conf">
+                        <input type="number" class="pl-3 py-2 font-normal text-base  border  border-black rounded-md" name="min_conf" min="1" required>
                     </div>
                 </div>
             </div>
