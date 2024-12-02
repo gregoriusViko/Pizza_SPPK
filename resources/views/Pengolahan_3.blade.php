@@ -46,7 +46,8 @@
     </main>
 
     <x-buttonScroll />
-    <form action="{{ route('olahdata.data-tabular') }}" method="get">
+    <form action="{{ route('hasil.min-support') }}" method="post">
+        @csrf
         <input type="hidden" name="min_sup" value="{{ $request->min_sup }}">
         <input type="hidden" name="min_conf" value="{{ $request->min_conf }}">
         <button

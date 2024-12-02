@@ -1,0 +1,21 @@
+,support,itemsets
+0,0.43243243243243246,frozenset({'The Barbecue Chicken Pizza'})
+1,0.43243243243243246,frozenset({'The California Chicken Pizza'})
+2,0.5945945945945946,frozenset({'The Classic Deluxe Pizza'})
+3,0.4864864864864865,frozenset({'The Hawaiian Pizza'})
+4,0.5405405405405406,frozenset({'The Pepperoni Pizza'})
+5,0.35135135135135137,frozenset({'The Thai Chicken Pizza'})
+6,0.13513513513513514,"frozenset({'The Barbecue Chicken Pizza', 'The California Chicken Pizza'})"
+7,0.16216216216216217,"frozenset({'The Barbecue Chicken Pizza', 'The Classic Deluxe Pizza'})"
+8,0.16216216216216217,"frozenset({'The Barbecue Chicken Pizza', 'The Hawaiian Pizza'})"
+9,0.2702702702702703,"frozenset({'The Barbecue Chicken Pizza', 'The Pepperoni Pizza'})"
+10,0.1891891891891892,"frozenset({'The Classic Deluxe Pizza', 'The California Chicken Pizza'})"
+11,0.21621621621621623,"frozenset({'The California Chicken Pizza', 'The Hawaiian Pizza'})"
+12,0.21621621621621623,"frozenset({'The Pepperoni Pizza', 'The California Chicken Pizza'})"
+13,0.2702702702702703,"frozenset({'The Classic Deluxe Pizza', 'The Hawaiian Pizza'})"
+14,0.2702702702702703,"frozenset({'The Classic Deluxe Pizza', 'The Pepperoni Pizza'})"
+15,0.24324324324324326,"frozenset({'The Classic Deluxe Pizza', 'The Thai Chicken Pizza'})"
+16,0.13513513513513514,"frozenset({'The Pepperoni Pizza', 'The Hawaiian Pizza'})"
+17,0.13513513513513514,"frozenset({'The Hawaiian Pizza', 'The Thai Chicken Pizza'})"
+18,0.16216216216216217,"frozenset({'The Pepperoni Pizza', 'The Thai Chicken Pizza'})"
+19,0.10810810810810811,"frozenset({'The Classic Deluxe Pizza', 'The Pepperoni Pizza', 'The Thai Chicken Pizza'})"

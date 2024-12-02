@@ -28,11 +28,11 @@
               Berikut hasil dari 1 itemset yang memiliki nilai support diatas nilai minimum support
             </h2>
             <h2 class="text-xl text-black mb-4 text-left">
-              Min Support : { }
+              Min Support : {{ $request->min_sup }}
             </h2>
           
             <!-- Box scrollable -->
-            <div class="bg-[#746868] w-[99%] h-70 overflow-y-scroll p-4">
+            {{-- <div class="bg-[#746868] w-[99%] h-70 overflow-y-scroll p-4">
               <!-- Konten panjang -->
               <div class="text-white space-y-4">
                 <h2 class="text-xl font-bold">Halaman Panjang</h2>
@@ -43,7 +43,27 @@
                 <p>Ini adalah bagian kelima dari konten panjang.</p>
                 <p>Konten ini bisa terus bertambah sesuai kebutuhan Anda.</p>
               </div>
-            </div>
+            </div> --}}
+            <table class="min-w-full max-w-full bg-[#746868] text-white border border-gray-300">
+
+              <thead class="sticky top-0 bg-[#5f4b44]"> <!-- Sticky untuk baris pertama -->
+                  <tr>
+                      @foreach ($title as $column)
+                          <th class="px-1 py-2 border-b text-sm font-semibold">{{ $column }}</th>
+                      @endforeach
+                  </tr>
+              </thead>
+
+              <tbody>
+                  @foreach ($csvData as $row)
+                      <tr class="hover:bg-[#8c7368]">
+                          @foreach ($row as $data)
+                              <td class="px-1 py-2 border-b">{{ $data }}</td>
+                          @endforeach
+                      </tr>
+                  @endforeach
+              </tbody>
+          </table>
           </div>
           
 </div>

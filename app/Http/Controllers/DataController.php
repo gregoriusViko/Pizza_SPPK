@@ -125,6 +125,8 @@ class DataController extends Controller
 
         $csvData = $hasil[0];
         $title = $hasil[1];
+
+        return view('Pengolahan_4', compact(['csvData', 'title', 'request']));
     }
 
     public function bacaCsv($path)
