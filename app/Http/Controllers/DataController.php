@@ -109,11 +109,22 @@ class DataController extends Controller
         return view('Pengolahan_3', compact(['csvData', 'title', 'request']));
     }
 
-    function minSupport1(Request $request){
+    function minSupport(Request $request){
         $request->validate([
             'min_sup' => 'required|numeric|max:100',
             'min_conf' => 'required|numeric|max:100',
         ]);
+        $process = new Process(['python3', 'kode_python/min_sup.py', $request->min_sup]);
+        $process->run();
+        
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+        $path = 'kode_python/support_value.csv';
+        $hasil = $this->bacaCsv($path);
+
+        $csvData = $hasil[0];
+        $title = $hasil[1];
     }
 
     public function bacaCsv($path)
@@ -133,6 +144,6 @@ class DataController extends Controller
             fclose($handle);
         }
 
-        return [array_slice($csvData, 0, 30), $title];
+        return [$csvData, $title];
     }
 }
