@@ -23,7 +23,7 @@
         <div class=" font-poppins font-medium text-xl">TABEL TRANSAKSI PIZZA per {hari}</div>
 
         <div class="border border-black rounded-md mt-3 p-4 ">
-            #tampilkan tabel pizza
+            {{-- #tampilkan tabel pizza --}}
             {{-- <table class="rounded-md w-full text-sm text-left rtl:text-right text-black border border-black">
                 <thead class="text-xs text-white uppercase bg-blue-600">
                     <tr>
