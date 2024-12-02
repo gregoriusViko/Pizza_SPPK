@@ -116,33 +116,7 @@
                 onclick="request()->is('/pengolahan')">NEXT</button>
         </div>
     </main>
-    <button id="scrollToTopBtn"
-        class="fixed bottom-6 right-8 bg-[#405D72] text-white px-3 pt-2 pb-2 rounded-full shadow-lg place-content-center hover:bg-indigo-600 transition duration-300 hidden"
-        onclick="scrollToTop()">
-        {{-- <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
-        </svg> --}}
-        <ion-icon name="arrow-up-circle-outline" class="h-6 w-6"></ion-icon>
-    </button>
+    <x-buttonScroll />
 
     @include('Partials.Footer') {{-- Sesuaikan jalur folder --}}
 </body>
-<script>
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
-    // Tampilkan tombol saat pengguna scroll ke bawah
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-            scrollToTopBtn.classList.remove("hidden");
-        } else {
-            scrollToTopBtn.classList.add("hidden");
-        }
-    });
-
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-        });
-    }
-</script>
