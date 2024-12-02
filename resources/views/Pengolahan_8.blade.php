@@ -24,50 +24,28 @@
 
         <div class="bg-[#D9D9D9] p-4 w-full h-96 flex flex-col items-start">
             <h2 class="text-xl text-black mb-4 text-left">
-                Berikut aturan asosiasi yang memenuhi aturan minimum support = {} dan minimum confidence = {}
+                Berikut aturan asosiasi yang memenuhi aturan minimum support = {{ $currentData['min_sup'] }} dan minimum confidence = {{ $currentData['min_conf'] }}
             </h2>
             <h2 class="text-xl  text-black mb-4 text-left">
-                Min Confident : { }
+                Min Confident : {{ $currentData['min_conf'] }}
             </h2>
             <div class="bg-[#746868] w-[99%] h-70 overflow-y-scroll p-4">
                 <table class="table table-bordered table-striped w-full border border-black text-white">
                     <thead class="border border-black">
                         <tr class="border border-black">
-                            {{-- @foreach ($columns as $column)
-                                <th>{{ $column }}</th>
-                            @endforeach --}}
-                            <th class="border border-black">No</th>
-                            <th class="border border-black">Aturan</th>
-                            <th class="border border-black">Support</th>
-                            <th class="border border-black">Confidence</th>
+                            @foreach ($title as $judul)
+                                <th class="border border-black">{{ $judul === '' ? 'No' : $judul }}</th>
+                            @endforeach
                         </tr>
                     </thead>
                     <tbody class="border border-black">
-                        {{-- @foreach ($data as $row)
+                        @foreach ($csvData as $row)
                             <tr>
-                                @foreach ($columns as $column)
-                                    <td>{{ $row[$column] }}</td>
+                                @foreach ($row as $data)
+                                    <td class="border border-black">{{ $data }}</td>
                                 @endforeach
                             </tr>
-                        @endforeach --}}
-                        <tr>
-                            <td class="border border-black">1</td>
-                            <td class="border border-black">Jika A maka B</td>
-                            <td class="border border-black">Nilainya Support</td>
-                            <td class="border border-black">Nilainya Conf</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-black">2</td>
-                            <td class="border border-black">Jika A maka B</td>
-                            <td class="border border-black">Nilainya Support</td>
-                            <td class="border border-black">Nilainya Conf</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-black">3</td>
-                            <td class="border border-black">Jika A maka B</td>
-                            <td class="border border-black">Nilainya Support</td>
-                            <td class="border border-black">Nilainya Conf</td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
                 {{-- <h2 class="text-xl font-bold bg-[#746868] text-white sticky top-0 p-2 text-center">

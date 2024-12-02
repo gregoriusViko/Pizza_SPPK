@@ -25,7 +25,7 @@
         <div class="bg-[#D9D9D9] p-4 w-full h-96 flex flex-col items-start">
 
             <h2 class="text-xl text-black mb-4 text-left">
-                Berikut hasil dari 1 itemset yang memiliki nilai support diatas nilai minimum support
+                Berikut hasil dari {{ $jumlah }} itemset yang memiliki nilai support diatas nilai minimum support
             </h2>
             <h2 class="text-xl text-black mb-4 text-left">
                 Min Support : {{ $request->min_sup }}

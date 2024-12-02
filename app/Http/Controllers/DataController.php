@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
@@ -101,6 +102,13 @@ class DataController extends Controller
         if (!$process->isSuccessful()) {
             throw new ProcessFailedException($process);
         }
+
+        // Menentukan path tempat file JSON akan disimpan
+        $filePath = storage_path('app/public/data.json');
+
+        // Menyimpan data dalam format JSON
+        File::put($filePath, json_encode($request->all(), JSON_PRETTY_PRINT));
+
         $path = 'kode_python/tabel_tabular.csv';
         $hasil = $this->bacaCsv($path);
 
@@ -137,7 +145,8 @@ class DataController extends Controller
             }
         }
         $csvData = $temp;
-        return view('Pengolahan_4', compact(['csvData', 'title', 'request', 'next_url']));
+        $jumlah = 1;
+        return view('Pengolahan_4', compact(['csvData', 'title', 'request', 'next_url', 'jumlah']));
     }
 
     function minSupport2(Request $request){
@@ -154,14 +163,83 @@ class DataController extends Controller
         $temp = [];
         $next_url = route('hasil.conf');
         foreach($csvData as $data){
-            if(substr_count($data, ',') === 2){
+            if(substr_count($data[1], ',') === 1){
                 $temp[] = $data;
-            }elseif(substr_count($data, ',') === 3){
+            }elseif(substr_count($data[1], ',') === 2){
                 $next_url = route('hasil.min-support-3');
             }
         }
         $csvData = $temp;
-        return view('Pengolahan_5', compact(['csvData', 'title', 'request', 'next_url']));
+
+        $jumlah = 2;
+        return view('Pengolahan_4', compact(['csvData', 'title', 'request', 'next_url', 'jumlah']));
+    }
+
+    function minSupport3(Request $request){
+        $request->validate([
+            'min_conf' => 'required|numeric|max:100'
+        ]);
+
+        $path = 'kode_python/support_value.csv';
+        $hasil = $this->bacaCsv($path);
+
+        $csvData = $hasil[0];
+        $title = $hasil[1];
+
+        $temp = [];
+
+        $next_url = route('hasil.conf');
+
+        foreach($csvData as $data){
+            if(substr_count($data[1], ',') === 2){
+                $temp[] = $data;
+            }
+        }
+        $csvData = $temp;
+        $jumlah = 3;
+        return view('Pengolahan_4', compact(['csvData', 'title', 'request', 'jumlah', 'next_url']));
+    }
+
+    function nilaiConf(Request $request){
+        $request->validate([
+            'min_conf' => 'required|numeric|max:100'
+        ]);
+
+        $process = new Process(['python3', 'kode_python/asosiasi.py', $request->min_conf]);
+        $process->run();
+        
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+
+        $filePath = storage_path('app/public/data.json');
+
+        if (File::exists($filePath)) {
+            // Membaca isi file JSON dan mengonversinya menjadi array
+            $currentData = json_decode(File::get($filePath), true);
+
+            // Menulis data yang sudah diperbarui ke file JSON
+            File::put(storage_path('app/public/hasil.json'), json_encode($currentData, JSON_PRETTY_PRINT));
+        }
+
+        return redirect('/hasil');
+    }
+
+    public function hasilAkhir(){
+        $path = 'kode_python/aturan_asosiasi.csv';
+        $hasil = $this->bacaCsv($path);
+
+        $csvData = $hasil[0];
+        $title = $hasil[1];
+
+        $filePath = storage_path('app/public/hasil.json');
+
+        if (File::exists($filePath)) {
+            // Membaca isi file JSON dan mengonversinya menjadi array
+            $currentData = json_decode(File::get($filePath), true);
+        }
+
+        return view('Pengolahan_8', compact(['csvData', 'title', 'currentData']));
     }
 
     public function bacaCsv($path)
