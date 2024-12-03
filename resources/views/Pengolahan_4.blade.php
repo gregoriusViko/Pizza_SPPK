@@ -28,7 +28,7 @@
                 Berikut hasil dari {{ $jumlah }} itemset yang memiliki nilai support diatas nilai minimum support
             </h2>
             <h2 class="text-xl text-black mb-4 text-left">
-                Min Support : {{ $request->min_sup }}
+                Min Support : {{ $request->min_sup }} %
             </h2>
 
             <!-- Box scrollable -->
