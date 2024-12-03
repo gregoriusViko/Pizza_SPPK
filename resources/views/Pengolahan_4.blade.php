@@ -19,7 +19,7 @@
     </header>
 
     <main class="content flex-grow mb-5 mt-4 pt-28 px-12 mx-24">
-        <h2 class="text-xl font-semibold text-black mb-4">Tabel 1 itemset</h2>
+        <h2 class="text-xl font-semibold text-black mb-4">Tabel {{ $jumlah }} itemset</h2>
 
 
         <div class="bg-[#D9D9D9] p-4 w-full h-96 flex flex-col items-start">
@@ -28,7 +28,7 @@
                 Berikut hasil dari {{ $jumlah }} itemset yang memiliki nilai support diatas nilai minimum support
             </h2>
             <h2 class="text-xl text-black mb-4 text-left">
-                Min Support : {{ $request->min_sup }}
+                Min Support : {{ $request->min_sup }} %
             </h2>
 
             <!-- Box scrollable -->
@@ -57,12 +57,16 @@
 
     <x-buttonScroll />
     <form action="{{ $next_url }}" method="post">
-      @csrf
-      <input type="hidden" name="min_conf" value="{{ $request->min_conf }}">
-      <button
-    class="mt-[-10px] w-[80px] h-[40px] bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105 ml-auto mr-[150px]">
-    NEXT
-</button>
+        @csrf
+        <input type="hidden" name="min_sup" value="{{ $request->min_sup }}">
+        <input type="hidden" name="min_conf" value="{{ $request->min_conf }}">
+        <div class="flex justify-end place-content-end">
+            <button
+                class="mt-[-10px] w-[80px] h-[40px] bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105 ml-auto mr-[150px]">
+                NEXT
+            </button>
+        </div>
+
     </form>
 
     @include('Partials.Footer') {{-- Sesuaikan jalur folder --}}
