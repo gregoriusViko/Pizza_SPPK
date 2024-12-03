@@ -156,7 +156,8 @@ class DataController extends Controller
 
     function minSupport2(Request $request){
         $request->validate([
-            'min_conf' => 'required|numeric|max:100'
+            'min_sup' => 'required|numeric|max:100',
+            'min_conf' => 'required|numeric|max:100',
         ]);
 
         $path = 'kode_python/support_value.csv';
@@ -181,13 +182,14 @@ class DataController extends Controller
         for ($i=0; $i < count($csvData); $i++) { 
             $csvData[$i][0] = number_format($csvData[$i][0] * 100, 2).'%';
         }
-        
+
         return view('Pengolahan_4', compact(['csvData', 'title', 'request', 'next_url', 'jumlah']));
     }
 
     function minSupport3(Request $request){
         $request->validate([
-            'min_conf' => 'required|numeric|max:100'
+            'min_sup' => 'required|numeric|max:100',
+            'min_conf' => 'required|numeric|max:100',
         ]);
 
         $path = 'kode_python/support_value.csv';
@@ -207,6 +209,10 @@ class DataController extends Controller
         }
         $csvData = $temp;
         $jumlah = 3;
+        for ($i=0; $i < count($csvData); $i++) { 
+            $csvData[$i][0] = number_format($csvData[$i][0] * 100, 2).'%';
+        }
+
         return view('Pengolahan_4', compact(['csvData', 'title', 'request', 'jumlah', 'next_url']));
     }
 
@@ -247,6 +253,12 @@ class DataController extends Controller
         if (File::exists($filePath)) {
             // Membaca isi file JSON dan mengonversinya menjadi array
             $currentData = json_decode(File::get($filePath), true);
+        }
+
+        for ($i=0; $i < count($csvData); $i++) { 
+            $csvData[$i][3] = number_format($csvData[$i][3] * 100, 2).'%';
+            $csvData[$i][4] = number_format($csvData[$i][4] * 100, 2).'%';
+            $csvData[$i][5] = number_format($csvData[$i][5], 2);
         }
 
         return view('Pengolahan_8', compact(['csvData', 'title', 'currentData']));
