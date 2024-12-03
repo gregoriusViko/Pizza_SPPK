@@ -1,29 +1,32 @@
 ,antecedents,consequents,support,confidence,lift
-0,The Classic Deluxe Pizza,The Barbecue Chicken Pizza,0.2307692307692307,0.33333333333333326,0.8666666666666666
-1,The Barbecue Chicken Pizza,The Classic Deluxe Pizza,0.2307692307692307,0.5999999999999999,0.8666666666666665
-2,The Hawaiian Pizza,The Barbecue Chicken Pizza,0.2307692307692307,0.42857142857142844,1.114285714285714
-3,The Barbecue Chicken Pizza,The Hawaiian Pizza,0.2307692307692307,0.5999999999999999,1.114285714285714
-4,The Barbecue Chicken Pizza,The Pepperoni Pizza,0.1538461538461538,0.3999999999999999,0.7428571428571428
-5,The Barbecue Chicken Pizza,The Thai Chicken Pizza,0.1538461538461538,0.3999999999999999,1.0399999999999998
-6,The Thai Chicken Pizza,The Barbecue Chicken Pizza,0.1538461538461538,0.3999999999999999,1.0399999999999998
-7,The California Chicken Pizza,The Classic Deluxe Pizza,0.2307692307692307,0.5999999999999999,0.8666666666666665
-8,The Classic Deluxe Pizza,The California Chicken Pizza,0.2307692307692307,0.33333333333333326,0.8666666666666666
-9,The Hawaiian Pizza,The California Chicken Pizza,0.2307692307692307,0.42857142857142844,1.114285714285714
-10,The California Chicken Pizza,The Hawaiian Pizza,0.2307692307692307,0.5999999999999999,1.114285714285714
-11,The California Chicken Pizza,The Pepperoni Pizza,0.1538461538461538,0.3999999999999999,0.7428571428571428
-12,The Hawaiian Pizza,The Classic Deluxe Pizza,0.3076923076923077,0.5714285714285715,0.8253968253968256
-13,The Classic Deluxe Pizza,The Hawaiian Pizza,0.3076923076923077,0.4444444444444445,0.8253968253968255
-14,The Classic Deluxe Pizza,The Pepperoni Pizza,0.3846153846153846,0.5555555555555555,1.0317460317460316
-15,The Pepperoni Pizza,The Classic Deluxe Pizza,0.3846153846153846,0.7142857142857143,1.0317460317460319
-16,The Thai Chicken Pizza,The Classic Deluxe Pizza,0.1538461538461538,0.3999999999999999,0.5777777777777776
-17,The Thai Chicken Pizza,The Hawaiian Pizza,0.1538461538461538,0.3999999999999999,0.7428571428571428
-18,The Thai Chicken Pizza,The Pepperoni Pizza,0.2307692307692307,0.5999999999999999,1.114285714285714
-19,The Pepperoni Pizza,The Thai Chicken Pizza,0.2307692307692307,0.42857142857142844,1.114285714285714
-20,"The Hawaiian Pizza, The Barbecue Chicken Pizza",The Classic Deluxe Pizza,0.1538461538461538,0.6666666666666666,0.9629629629629629
-21,"The Hawaiian Pizza, The Classic Deluxe Pizza",The Barbecue Chicken Pizza,0.1538461538461538,0.49999999999999983,1.2999999999999996
-22,"The Barbecue Chicken Pizza, The Classic Deluxe Pizza",The Hawaiian Pizza,0.1538461538461538,0.6666666666666666,1.2380952380952381
-23,The Barbecue Chicken Pizza,"The Hawaiian Pizza, The Classic Deluxe Pizza",0.1538461538461538,0.3999999999999999,1.2999999999999996
-24,"The Thai Chicken Pizza, The Classic Deluxe Pizza",The Pepperoni Pizza,0.1538461538461538,1.0,1.8571428571428572
-25,"The Thai Chicken Pizza, The Pepperoni Pizza",The Classic Deluxe Pizza,0.1538461538461538,0.6666666666666666,0.9629629629629629
-26,"The Classic Deluxe Pizza, The Pepperoni Pizza",The Thai Chicken Pizza,0.1538461538461538,0.3999999999999999,1.0399999999999998
-27,The Thai Chicken Pizza,"The Classic Deluxe Pizza, The Pepperoni Pizza",0.1538461538461538,0.3999999999999999,1.0399999999999998
+0,The Barbecue Chicken Pizza,The California Chicken Pizza,0.12,0.3,0.625
+1,The Barbecue Chicken Pizza,The Classic Deluxe Pizza,0.24,0.6,0.8823529411764705
+2,The Classic Deluxe Pizza,The Barbecue Chicken Pizza,0.24,0.3529411764705882,0.8823529411764705
+3,The Barbecue Chicken Pizza,The Hawaiian Pizza,0.16,0.39999999999999997,0.7692307692307692
+4,The Hawaiian Pizza,The Barbecue Chicken Pizza,0.16,0.3076923076923077,0.7692307692307693
+5,The Barbecue Chicken Pizza,The Pepperoni Pizza,0.16,0.39999999999999997,0.8333333333333333
+6,The Pepperoni Pizza,The Barbecue Chicken Pizza,0.16,0.33333333333333337,0.8333333333333334
+7,The Thai Chicken Pizza,The Barbecue Chicken Pizza,0.12,0.3,0.7499999999999999
+8,The Barbecue Chicken Pizza,The Thai Chicken Pizza,0.12,0.3,0.7499999999999999
+9,The California Chicken Pizza,The Classic Deluxe Pizza,0.28,0.5833333333333334,0.8578431372549019
+10,The Classic Deluxe Pizza,The California Chicken Pizza,0.28,0.411764705882353,0.857843137254902
+11,The California Chicken Pizza,The Hawaiian Pizza,0.2,0.4166666666666667,0.8012820512820513
+12,The Hawaiian Pizza,The California Chicken Pizza,0.2,0.38461538461538464,0.8012820512820513
+13,The California Chicken Pizza,The Pepperoni Pizza,0.24,0.5,1.0416666666666667
+14,The Pepperoni Pizza,The California Chicken Pizza,0.24,0.5,1.0416666666666667
+15,The Hawaiian Pizza,The Classic Deluxe Pizza,0.32,0.6153846153846154,0.9049773755656109
+16,The Classic Deluxe Pizza,The Hawaiian Pizza,0.32,0.47058823529411764,0.9049773755656109
+17,The Pepperoni Pizza,The Classic Deluxe Pizza,0.24,0.5,0.7352941176470588
+18,The Classic Deluxe Pizza,The Pepperoni Pizza,0.24,0.3529411764705882,0.7352941176470588
+19,The Thai Chicken Pizza,The Classic Deluxe Pizza,0.24,0.6,0.8823529411764705
+20,The Classic Deluxe Pizza,The Thai Chicken Pizza,0.24,0.3529411764705882,0.8823529411764705
+21,The Pepperoni Pizza,The Hawaiian Pizza,0.16,0.33333333333333337,0.6410256410256411
+22,The Hawaiian Pizza,The Pepperoni Pizza,0.16,0.3076923076923077,0.6410256410256411
+23,The Thai Chicken Pizza,The Hawaiian Pizza,0.2,0.5,0.9615384615384615
+24,The Hawaiian Pizza,The Thai Chicken Pizza,0.2,0.38461538461538464,0.9615384615384616
+25,The Thai Chicken Pizza,The Pepperoni Pizza,0.16,0.39999999999999997,0.8333333333333333
+26,The Pepperoni Pizza,The Thai Chicken Pizza,0.16,0.33333333333333337,0.8333333333333334
+27,"The Barbecue Chicken Pizza, The Hawaiian Pizza",The Classic Deluxe Pizza,0.12,0.75,1.102941176470588
+28,"The Barbecue Chicken Pizza, The Classic Deluxe Pizza",The Hawaiian Pizza,0.12,0.5,0.9615384615384615
+29,"The Hawaiian Pizza, The Classic Deluxe Pizza",The Barbecue Chicken Pizza,0.12,0.375,0.9375
+30,The Barbecue Chicken Pizza,"The Hawaiian Pizza, The Classic Deluxe Pizza",0.12,0.3,0.9375
