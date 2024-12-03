@@ -94,12 +94,13 @@ class DataController extends Controller
             'min_conf' => 'required|numeric|max:100',
         ]);
 
-        $process = new Process(['python3', 'kode_python/convert_to_tabular.py', $request->hari]);
+        $process = new Process(['C:\Users\LEGION\AppData\Local\Microsoft\WindowsApps\python.exe', 'print("a")']);
         $process->run();
         
         if (!$process->isSuccessful()) {
             throw new ProcessFailedException($process);
         }
+        dd($process->getOutput());
         $path = 'kode_python/tabel_tabular.csv';
         $hasil = $this->bacaCsv($path);
 
