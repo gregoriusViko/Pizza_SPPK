@@ -22,9 +22,15 @@ Route::prefix('/olah-data')->name('olahdata.')->group(function(){
         Route::get('/data-tabular', 'dataTabular')->name('data-tabular');
     });
 });
-Route::get('/Pengolahan_4', function () {
-    return view('Pengolahan_4');
+
+Route::prefix('/hasil')->controller(DataController::class)->name('hasil.')->group(function(){
+    Route::get('/', 'hasilAkhir')->name('hasil-akhir');
+    Route::post('/min-support-1', 'minSupport1')->name('min-support-1');
+    Route::post('/min-support-2', 'minSupport2')->name('min-support-2');
+    Route::post('/min-support-3', 'minSupport3')->name('min-support-3');
+    Route::post('/conf', 'nilaiConf')->name('conf');
 });
+
 Route::get('/Pengolahan_5', function () {
     return view('Pengolahan_5');
 });

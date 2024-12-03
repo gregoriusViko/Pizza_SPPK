@@ -20,57 +20,9 @@
 
     <!-- Main Content -->
     <main class="content flex-grow mb-5 mt-4 pt-28 px-12 mx-24"> <!-- Gunakan padding top sesuai tinggi header -->
-        <div class=" font-poppins font-medium text-xl">TABEL TRANSAKSI PIZZA per {hari}</div>
+        <div class=" font-poppins font-medium text-xl">TABEL TRANSAKSI PIZZA per {{ $request->hari }} hari</div>
 
         <div class="border border-black rounded-md mt-3 p-4 ">
-            {{-- #tampilkan tabel pizza --}}
-            {{-- <table class="rounded-md w-full text-sm text-left rtl:text-right text-black border border-black">
-                <thead class="text-xs text-white uppercase bg-blue-600">
-                    <tr>
-                        <th scope="col" class="px-6 py-3">ID</th>
-                        <th scope="col" class="px-6 py-3">Tanggal-Waktu</th>
-                        <th scope="col" class="px-6 py-3">Nama Produk</th>
-                        <th scope="col" class="px-6 py-3">Harga Produk</th>
-                        <th scope="col" class="px-6 py-3">Jumlah</th>
-                        <th scope="col" class="px-6 py-3">Total Pembelian</th>
-                        <th scope="col" class="px-6 py-3">Metode Pembelian</th>
-                        <th scope="col" class="px-6 py-3">Nama Pembeli</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($orders as $order)
-                        <tr>
-                            <th scope="col" class="px-6 py-3">
-                                {{ $index }}
-                                @php
-                                    $index += 1;
-                                @endphp
-                            </th>
-                            <th scope="col" class="px-6 py-3 ">
-                                {{ $order->order_time->isoFormat('dddd D/MM/YYYY - HH.mm') }}
-                            </th>
-                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
-                                {{ $order->product->type->name }}
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                {{ Number::currency($order->price, in: 'idr') }}
-                            </th>
-                            <th scope="col" class="px-6 py-3 whitespace-nowrap">
-                                {{ WeightConverter::convert($order->quantity_kg) }}
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                {{ Number::currency($order->price * $order->quantity_kg, in: 'idr') }}
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                {{ ucwords($order->payment_proof) }}
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                {{ strtok($order->buyer->name, ' ') }}
-                            </th>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table> --}}
             @php
                 $i = 1;
             @endphp

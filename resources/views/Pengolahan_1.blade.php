@@ -29,7 +29,8 @@
                 <div class="grid grid-cols-2 grid-flow-row gap-y-2">
                     <div class="font-poppins font-normal text-base">Kolom yang dibutuhkan: </div>
                     <div class="">
-                        <textarea class="pl-3 py-2 font-poppins font-normal text-base border  border-black rounded-md w-full h-24 resize-none" readonly>daftar item kolom </textarea>
+                        <textarea class="pl-3 py-2 font-poppins font-normal text-base border  border-black rounded-md w-full h-24 resize-none" readonly>order_id, quantity, order_date, order_time, unit_price, total_price, pizza_name
+                        </textarea>
                     </div>
                     <div class="font-poppins font-normal text-base">Rentang waktu (hari)</div>
                     <div class="">

@@ -46,11 +46,12 @@
     </main>
 
     <x-buttonScroll />
-    <form action="{{ route('olahdata.data-tabular') }}" method="get">
+    <form action="{{ route('hasil.min-support-1') }}" method="post">
+        @csrf
         <input type="hidden" name="min_sup" value="{{ $request->min_sup }}">
         <input type="hidden" name="min_conf" value="{{ $request->min_conf }}">
         <button
-            class="mt-[-10px] w-[80px] h-[40px] bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105 ml-auto mr-[150px]"
+            class="flex place-content-end mt-5 px-5 py-2 bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105 ml-auto mr-[150px]"
             onclick="window.location.href='/Pengolahan_4'">NEXT
         </button>
     </form>
