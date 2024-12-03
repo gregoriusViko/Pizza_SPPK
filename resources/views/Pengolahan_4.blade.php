@@ -19,7 +19,7 @@
     </header>
 
     <main class="content flex-grow mb-5 mt-4 pt-28 px-12 mx-24">
-        <h2 class="text-xl font-semibold text-black mb-4">Tabel 1 itemset</h2>
+        <h2 class="text-xl font-semibold text-black mb-4">Tabel {{ $jumlah }} itemset</h2>
 
 
         <div class="bg-[#D9D9D9] p-4 w-full h-96 flex flex-col items-start">

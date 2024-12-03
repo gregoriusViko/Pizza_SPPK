@@ -24,7 +24,8 @@
 
         <div class="bg-[#D9D9D9] p-4 w-full h-96 flex flex-col items-start">
             <h2 class="text-xl text-black mb-4 text-left">
-                Berikut aturan asosiasi yang memenuhi aturan minimum support = {{ $currentData['min_sup'] }} dan minimum confidence = {{ $currentData['min_conf'] }}
+                Berikut aturan asosiasi yang memenuhi aturan minimum support = {{ $currentData['min_sup'] }} dan minimum
+                confidence = {{ $currentData['min_conf'] }}
             </h2>
             <h2 class="text-xl  text-black mb-4 text-left">
                 Min Confident : {{ $currentData['min_conf'] }}
@@ -48,19 +49,6 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{-- <h2 class="text-xl font-bold bg-[#746868] text-white sticky top-0 p-2 text-center">
-                Aturan | Confidence
-              </h2>
-              
-              <!-- Konten panjang -->
-              <div class="text-white space-y-4">
-                <p>Ini adalah bagian pertama dari konten panjang.</p>
-                <p>Ini adalah bagian kedua dari konten panjang.</p>
-                <p>Ini adalah bagian ketiga dari konten panjang.</p>
-                <p>Ini adalah bagian keempat dari konten panjang.</p>
-                <p>Ini adalah bagian kelima dari konten panjang.</p>
-                <p>Konten ini bisa terus bertambah sesuai kebutuhan Anda.</p>
-              </div> --}}
             </div>
         </div>
 
@@ -72,9 +60,9 @@
 
     <x-buttonScroll />
     <button
-        class="mt-[-10px] w-[80px] h-[40px] bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105 ml-auto mr-[150px]" 
-        onclick="window.location.href='/Hasil'">
-        HASIL
+        class="mt-[-10px] w-[80px] h-[40px] bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105 ml-auto mr-[150px]"
+        onclick="window.location.href='/'">
+        HOME
     </button>
 
     @include('Partials.Footer') {{-- Sesuaikan jalur folder --}}

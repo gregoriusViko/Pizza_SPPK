@@ -98,7 +98,7 @@
     <button
         class="mt-[-10px] w-[80px] h-[40px] bg-[#EA5455] rounded-lg text-white font-semibold transition ease-in-out duration-300 transform hover:bg-[#56e743] hover:scale-105 ml-auto mr-[150px]"
         onclick="window.location.href='/'">
-        HOME`
+        HOME
     </button>
 
     @include('Partials.Footer') {{-- Sesuaikan jalur folder --}}

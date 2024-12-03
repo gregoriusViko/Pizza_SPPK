@@ -145,6 +145,11 @@ class DataController extends Controller
             }
         }
         $csvData = $temp;
+
+        for ($i=0; $i < count($csvData); $i++) { 
+            $csvData[$i][0] = number_format($csvData[$i][0] * 100, 2).'%';
+        }
+
         $jumlah = 1;
         return view('Pengolahan_4', compact(['csvData', 'title', 'request', 'next_url', 'jumlah']));
     }
@@ -172,6 +177,11 @@ class DataController extends Controller
         $csvData = $temp;
 
         $jumlah = 2;
+
+        for ($i=0; $i < count($csvData); $i++) { 
+            $csvData[$i][0] = number_format($csvData[$i][0] * 100, 2).'%';
+        }
+        
         return view('Pengolahan_4', compact(['csvData', 'title', 'request', 'next_url', 'jumlah']));
     }
 

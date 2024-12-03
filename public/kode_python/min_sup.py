@@ -13,7 +13,6 @@ def cari_support(min_sup):
 
         # Mengonversi frozenset menjadi string yang lebih bersih
         frequent_itemsets['itemsets'] = frequent_itemsets['itemsets'].apply(lambda x: ', '.join(list(x)))
-
         frequent_itemsets.to_csv('kode_python/support_value.csv', index=False)
         
     except Exception as e:
