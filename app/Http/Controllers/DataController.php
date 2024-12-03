@@ -156,7 +156,8 @@ class DataController extends Controller
 
     function minSupport2(Request $request){
         $request->validate([
-            'min_conf' => 'required|numeric|max:100'
+            'min_sup' => 'required|numeric|max:100',
+            'min_conf' => 'required|numeric|max:100',
         ]);
 
         $path = 'kode_python/support_value.csv';
@@ -181,13 +182,14 @@ class DataController extends Controller
         for ($i=0; $i < count($csvData); $i++) { 
             $csvData[$i][0] = number_format($csvData[$i][0] * 100, 2).'%';
         }
-        
+
         return view('Pengolahan_4', compact(['csvData', 'title', 'request', 'next_url', 'jumlah']));
     }
 
     function minSupport3(Request $request){
         $request->validate([
-            'min_conf' => 'required|numeric|max:100'
+            'min_sup' => 'required|numeric|max:100',
+            'min_conf' => 'required|numeric|max:100',
         ]);
 
         $path = 'kode_python/support_value.csv';
@@ -207,6 +209,10 @@ class DataController extends Controller
         }
         $csvData = $temp;
         $jumlah = 3;
+        for ($i=0; $i < count($csvData); $i++) { 
+            $csvData[$i][0] = number_format($csvData[$i][0] * 100, 2).'%';
+        }
+
         return view('Pengolahan_4', compact(['csvData', 'title', 'request', 'jumlah', 'next_url']));
     }
 

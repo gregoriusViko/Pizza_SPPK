@@ -1,22 +1,26 @@
 support,itemsets
-0.38461538461538464,The Barbecue Chicken Pizza
-0.38461538461538464,The California Chicken Pizza
-0.6923076923076923,The Classic Deluxe Pizza
-0.5384615384615384,The Hawaiian Pizza
-0.5384615384615384,The Pepperoni Pizza
-0.38461538461538464,The Thai Chicken Pizza
-0.23076923076923078,"The Classic Deluxe Pizza, The Barbecue Chicken Pizza"
-0.23076923076923078,"The Hawaiian Pizza, The Barbecue Chicken Pizza"
-0.15384615384615385,"The Pepperoni Pizza, The Barbecue Chicken Pizza"
-0.15384615384615385,"The Barbecue Chicken Pizza, The Thai Chicken Pizza"
-0.23076923076923078,"The Classic Deluxe Pizza, The California Chicken Pizza"
-0.23076923076923078,"The Hawaiian Pizza, The California Chicken Pizza"
-0.15384615384615385,"The Pepperoni Pizza, The California Chicken Pizza"
-0.3076923076923077,"The Hawaiian Pizza, The Classic Deluxe Pizza"
-0.38461538461538464,"The Pepperoni Pizza, The Classic Deluxe Pizza"
-0.15384615384615385,"The Classic Deluxe Pizza, The Thai Chicken Pizza"
-0.15384615384615385,"The Hawaiian Pizza, The Pepperoni Pizza"
-0.15384615384615385,"The Hawaiian Pizza, The Thai Chicken Pizza"
-0.23076923076923078,"The Pepperoni Pizza, The Thai Chicken Pizza"
-0.15384615384615385,"The Hawaiian Pizza, The Classic Deluxe Pizza, The Barbecue Chicken Pizza"
-0.15384615384615385,"The Pepperoni Pizza, The Classic Deluxe Pizza, The Thai Chicken Pizza"
+0.3684210526315789,The Barbecue Chicken Pizza
+0.5263157894736842,The California Chicken Pizza
+0.631578947368421,The Classic Deluxe Pizza
+0.5263157894736842,The Hawaiian Pizza
+0.5263157894736842,The Pepperoni Pizza
+0.3157894736842105,The Thai Chicken Pizza
+0.15789473684210525,"The California Chicken Pizza, The Barbecue Chicken Pizza"
+0.15789473684210525,"The Classic Deluxe Pizza, The Barbecue Chicken Pizza"
+0.10526315789473684,"The Hawaiian Pizza, The Barbecue Chicken Pizza"
+0.21052631578947367,"The Barbecue Chicken Pizza, The Pepperoni Pizza"
+0.21052631578947367,"The California Chicken Pizza, The Classic Deluxe Pizza"
+0.2631578947368421,"The Hawaiian Pizza, The California Chicken Pizza"
+0.2631578947368421,"The California Chicken Pizza, The Pepperoni Pizza"
+0.3157894736842105,"The Hawaiian Pizza, The Classic Deluxe Pizza"
+0.3157894736842105,"The Classic Deluxe Pizza, The Pepperoni Pizza"
+0.21052631578947367,"The Thai Chicken Pizza, The Classic Deluxe Pizza"
+0.15789473684210525,"The Hawaiian Pizza, The Pepperoni Pizza"
+0.21052631578947367,"The Hawaiian Pizza, The Thai Chicken Pizza"
+0.10526315789473684,"The Thai Chicken Pizza, The Pepperoni Pizza"
+0.10526315789473684,"The California Chicken Pizza, The Barbecue Chicken Pizza, The Pepperoni Pizza"
+0.10526315789473684,"The Classic Deluxe Pizza, The Barbecue Chicken Pizza, The Pepperoni Pizza"
+0.10526315789473684,"The Hawaiian Pizza, The California Chicken Pizza, The Classic Deluxe Pizza"
+0.10526315789473684,"The Hawaiian Pizza, The California Chicken Pizza, The Pepperoni Pizza"
+0.10526315789473684,"The Hawaiian Pizza, The Classic Deluxe Pizza, The Thai Chicken Pizza"
+0.10526315789473684,"The Thai Chicken Pizza, The Classic Deluxe Pizza, The Pepperoni Pizza"
