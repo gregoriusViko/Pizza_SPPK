@@ -24,11 +24,11 @@
 
         <div class="bg-[#D9D9D9] p-4 w-full h-96 flex flex-col items-start">
             <h2 class="text-xl text-black mb-4 text-left">
-                Berikut aturan asosiasi yang memenuhi aturan minimum support = {{ $currentData['min_sup'] }} dan minimum
-                confidence = {{ $currentData['min_conf'] }}
+                Berikut aturan asosiasi yang memenuhi aturan minimum support = {{ $currentData['min_sup'] }} % dan minimum
+                confidence = {{ $currentData['min_conf'] }} %
             </h2>
             <h2 class="text-xl  text-black mb-4 text-left">
-                Min Confident : {{ $currentData['min_conf'] }}
+                Min Confident : {{ $currentData['min_conf'] }} %
             </h2>
             <div class="bg-[#746868] w-[99%] h-70 overflow-y-scroll p-4">
                 <table class="table table-bordered table-striped w-full border border-black text-white">

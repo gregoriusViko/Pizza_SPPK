@@ -96,7 +96,7 @@ class DataController extends Controller
             'min_conf' => 'required|numeric|max:100',
         ]);
 
-        $process = new Process(['python3', 'kode_python/convert_to_tabular.py', $request->hari]);
+        $process = new Process(['C:\Users\User\AppData\Local\Programs\Python\Python312\python.exe', 'kode_python/convert_to_tabular.py', $request->hari]);
         $process->run();
         
         if (!$process->isSuccessful()) {
@@ -123,7 +123,7 @@ class DataController extends Controller
             'min_sup' => 'required|numeric|max:100',
             'min_conf' => 'required|numeric|max:100',
         ]);
-        $process = new Process(['python3', 'kode_python/min_sup.py', $request->min_sup]);
+        $process = new Process(['C:\Users\User\AppData\Local\Programs\Python\Python312\python.exe', 'kode_python/min_sup.py', $request->min_sup]);
         $process->run();
         
         if (!$process->isSuccessful()) {
@@ -215,7 +215,7 @@ class DataController extends Controller
             'min_conf' => 'required|numeric|max:100'
         ]);
 
-        $process = new Process(['python3', 'kode_python/asosiasi.py', $request->min_conf]);
+        $process = new Process(['C:\Users\User\AppData\Local\Programs\Python\Python312\python.exe', 'kode_python/asosiasi.py', $request->min_conf]);
         $process->run();
         
         if (!$process->isSuccessful()) {
