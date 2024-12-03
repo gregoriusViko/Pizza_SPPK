@@ -255,6 +255,12 @@ class DataController extends Controller
             $currentData = json_decode(File::get($filePath), true);
         }
 
+        for ($i=0; $i < count($csvData); $i++) { 
+            $csvData[$i][3] = number_format($csvData[$i][3] * 100, 2).'%';
+            $csvData[$i][4] = number_format($csvData[$i][4] * 100, 2).'%';
+            $csvData[$i][5] = number_format($csvData[$i][5], 2);
+        }
+
         return view('Pengolahan_8', compact(['csvData', 'title', 'currentData']));
     }
 
