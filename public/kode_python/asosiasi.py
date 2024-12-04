@@ -14,6 +14,7 @@ def asosiasi(min_conf):
         rules = rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']]
         rules['antecedents'] = rules['antecedents'].apply(lambda x: ', '.join(list(x)))
         rules['consequents'] = rules['consequents'].apply(lambda x: ', '.join(list(x)))
+        rules.sort_values('confidence', ascending=False, inplace=True)
         rules.to_csv('kode_python/aturan_asosiasi.csv', index=True)
         
     except Exception as e:
