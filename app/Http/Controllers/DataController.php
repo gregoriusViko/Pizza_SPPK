@@ -61,6 +61,13 @@ class DataController extends Controller
             fclose($handle);
         }
 
+        $filePath = storage_path('app/public/data.json');
+
+        if (File::exists($filePath)) {
+            // Membaca isi file JSON dan mengonversinya menjadi array
+            File::put($filePath, json_encode($request->all(), JSON_PRETTY_PRINT));
+        }
+
         // Mengelompokkan data per 5 hari
         $groupedData = [];
         foreach ($csvData as $row) {
@@ -96,7 +103,7 @@ class DataController extends Controller
             'min_conf' => 'required|numeric|max:100',
         ]);
 
-        $process = new Process(['C:\Users\LEGION\AppData\Local\Microsoft\WindowsApps\python.exe', 'print("a")']);
+        $process = new Process(['python3', 'kode_python/convert_to_tabular.py', $request->hari]);
         $process->run();
         
         if (!$process->isSuccessful()) {
